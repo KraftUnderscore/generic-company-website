@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <title>Contact Form</title>
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Contact Form</h1>
+<p>Go to main page</p>
+<form>
+    First name:<br>
+    <input type="text" required><br>
+    Last name:<br>
+    <input type="text" required><br>
+    Choose a topic:<br>
+    <select name="cars" id="cars" required>
+        <option value="" disabled selected>Select your option</option>
+        <optgroup label="Help">
+            <option value="gen_help">General</option>
+            <option value="tech_help">Technical</option>
+        </optgroup>
+        <optgroup label="Business">
+            <option value="software">Software</option>
+            <option value="other">Products</option>
+        </optgroup>
+    </select><br>
+    Your pronoun:<br>
+    <input type="radio" name="gender" value="male"> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+    <input type="radio" name="gender" value="other" checked required> Other<br>
+    Your message:<br>
+    <textarea id="msg" name="message" rows="5" cols="50" maxlength="200" placeholder="Write your message here..." required></textarea><br>
+    <input type="reset" value="Clear form">
+    <input type="submit" value="Submit form">
+    </form>
+</body>
+</html>

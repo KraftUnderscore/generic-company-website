@@ -1,73 +1,70 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Business contact form">
+        <meta name="keywords" content="contact, form, help, business">
+        <title>Formularz kontaktowy</title>
 
-<meta charset="utf-8">
-<meta name="description" content="Business contact form">
-<meta name="keywords" content="contact, form, help, business">
+        <style>
+            textarea {
+                resize: none;
+            }
+        </style>
+    </head>
 
-<title>Formularz kontaktowy</title>
+    <body>
+        <h1>Formularz kontaktowy</h1>
 
-<style>
-    textarea {
-        resize: none;
-    }
-</style>
-</head>
+        <form>
+            <p>
+                <b>Imię:</b> <input type="text" required>
+            </p>
 
-<body>
+            <p>
+                <b>Nazwisko:</b> <input type="text" required>
+            </p>
 
-<h1>Formularz kontaktowy</h1>
+            <p>
+                <b>Email:</b> <input type="email" required>
+            </p>
 
-<form>
-    <p>
-        <b>Imię:</b> <input type="text" required>
-    </p>
+            <input id="cons_res" type="checkbox" name="consent" value="respond" required>
+            <label for="cons_res">
+                Wyrażam zgodę na kontakt mailowy na podany adres w celu <b>odpowiedzi</b> na moją wiadomość.
+            </label><br>
+            <input id="cons_mark" type="checkbox" name="consent" value="marketing">
+            <label for="cons_mark">
+                Wyrażam zgodę na kontakt mailowy na podany adres w celach <b>marketingowych</b>.
+            </label>
 
-    <p>
-        <b>Nazwisko:</b> <input type="text" required>
-    </p>
+            <p>
+                <b>Temat:</b>
+                <select name="topic" required>
+                    <option value="" disabled selected>Wybierz temat</option>
+                    <optgroup label="Pomoc">
+                        <option value="gen_help">Ogólna</option>
+                        <option value="tech_help">Techniczna</option>
+                    </optgroup>
+                    <optgroup label="Biznes">
+                        <option value="software">Oprogramowanie</option>
+                        <option value="other">Produkty</option>
+                    </optgroup>
+                </select>
+            </p>
 
-    <p>
-        <b>Email:</b> <input type="email" required>
-    </p>
+            <b>Jak się do Ciebie odnieść:</b><br>
+            <input type="radio" name="gender" value="male" checked required> Pan<br>
+            <input type="radio" name="gender" value="female"> Pani<br>
 
-    <input type="checkbox" name="consent_respond" value="male" required>
-    <label for="consent_respond">
-        Wyrażam zgodę na kontakt mailowy na podany adres w celu <b>odpowiedzi</b> na moją wiadomość.
-    </label><br>
-    <input type="checkbox" name="consent_marketing" value="male">
-    <label for="consent_marketing">
-        Wyrażam zgodę na kontakt mailowy na podany adres w celach <b>marketingowych</b>.
-    </label>
-
-    <p>
-    <b>Temat:</b>
-    <select name="topic" required>
-        <option value="" disabled selected>Wybierz temat</option>
-        <optgroup label="Pomoc">
-            <option value="gen_help">Ogólna</option>
-            <option value="tech_help">Techniczna</option>
-        </optgroup>
-        <optgroup label="Biznes">
-            <option value="software">Oprogramowanie</option>
-            <option value="other">Produkty</option>
-        </optgroup>
-    </select>
-    </p>
-
-    <b>Jak się do Ciebie odnieść:</b><br>
-    <input type="radio" name="gender" value="male" checked required> Pan<br>
-    <input type="radio" name="gender" value="female"> Pani<br>
-
-    <b>Twoja wiadomość:</b><br>
-    <textarea id="msg" name="message" rows="5" cols="50" maxlength="200" placeholder="Tutaj pisz..." required></textarea><br>
-    <input type="reset" value="Wyczyść formularz">
-    <input type="submit" value="Wyślij formularz">
-</form>
-
-<p>
-    <a href="main.html">Powrót na stronę główną</a>
-</p>
-</body>
+            <b>Twoja wiadomość:</b><br>
+            <textarea id="msg" name="message" rows="5" cols="50" maxlength="200" placeholder="Tutaj pisz..." required></textarea><br>
+            <input type="reset" value="Wyczyść formularz">
+            <input type="submit" value="Wyślij formularz">
+        </form>
+        
+        <p>
+            <a href="main.html">Powrót na stronę główną</a>
+        </p>
+    </body>
 </html>

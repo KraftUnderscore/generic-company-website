@@ -16,17 +16,47 @@
     <body>
         <h1>Formularz kontaktowy</h1>
 
-        <form>
+        <form autocomplete="on">
             <p>
-                <b>Imię:</b> <input type="text" required>
+                <b>Imię:</b>
+                <input type="text" id="firstName" autofocus/>
+                (podaj swoje imię, np. Karol)
             </p>
 
             <p>
-                <b>Nazwisko:</b> <input type="text" required>
+                <b>Nazwisko*:</b>
+                <input type="text" id="lastName" required>
+                (podaj swoje nazwisko, np. Kowalski)
             </p>
 
             <p>
-                <b>Email:</b> <input type="email" required>
+                <b>Miesiąc urodzenia:</b>
+                <input type="text" id="txtList" placeholder="Wybierz miesiąc" list="months">
+                (należy wybrać jeden z podpowiadanych miesięcy)
+                <datalist id="months">
+                    <option value="Styczeń">
+                    <option value="Luty">
+                    <option value="Marzec">
+                    <option value="Kwiecień">
+                    <option value="Maj">
+                    <option value="Czerwiec">
+                    <option value="Lipiec">
+                    <option value="Sierpień">
+                    <option value="Wrzesień">
+                    <option value="Październik">
+                    <option value="Listopad">
+                    <option value="Grudzień">
+                </datalist>
+            </p>
+
+            <p>
+                <b>Email:</b> <input type="email" id="email" required>
+                (nazwa@twojadomena.pl)
+            </p>
+
+            <p>
+                <b>Telefon:</b> <input type="tel" id="tel" pattern="\d{3} \d{3} \d{3}">
+                (### ### ###)
             </p>
 
             <input id="cons_res" type="checkbox" name="consent" value="respond" required>
@@ -63,6 +93,10 @@
             <input type="submit" value="Wyślij formularz">
         </form>
         
+        <p>
+            <a href="additional_form.html">Wypełnij formularz dodatkowy!</a>
+        </p>
+
         <p>
             <a href="main.html">Powrót na stronę główną</a>
         </p>

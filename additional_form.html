@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Business additional client data form">
+        <meta name="keywords" content="client, data, additional, bonus, form">
+        <title>Formularz dodatkowy</title>
+    </head>
+
+    <body>
+        <h1>Formularz dodatkowy</h1>
+
+        <form autocomplete="off">
+            <p>
+                <b>Jaki możemy się do Ciebie zwracać?</b>
+                <input type="text" id="text" placeholder="Twój pseudonim"/>
+            </p>
+
+            <p>
+                <b>Jaki jest twój ulubiony kolor?</b>
+                <input type="color" id="color"/>
+            </p>
+
+            <p>
+                <b>W którym miesiącu zacząłeś pracę?</b>
+                <input type="month" id="month"/>
+            </p>
+
+            <p>
+                <b>Jak bardzo lubisz pizzę hawajską?</b>
+                -10<input type="range" id="range"
+                min="-10"
+                max="10"
+                value="0"/>10
+            </p>
+
+            <p>
+                <b>Przetestuj nasz najnowsz search engine:</b>
+                <input type="search" id="search" placeholder="Wpisz zapytanie"/>
+            </p>
+
+            <p>
+                <b>Podziel się swoją najczęściej odwiedzaną stroną!</b>
+                <input type="url" id="url" placeholder="https://www.slodkiekotki.pl"/>
+            </p>
+            <input type="reset" value="Wyczyść formularz">
+            <input type="submit" value="Wyślij formularz">
+        </form>
+
+        <p>
+            <a href="contact_form.html">Wypełnij formularz kontaktowy!</a>
+        </p>
+
+        <p>
+            <a href="main.html">Powrót na stronę główną</a>
+        </p>
+    </body>
+</html>

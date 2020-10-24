@@ -6,6 +6,7 @@
         <meta name="keywords" content="contact, form, help, business">
         <title>Formularz kontaktowy</title>
 
+        <link rel="stylesheet" type="text/css" href="forms.css">
         <style>
             textarea {
                 resize: none;
@@ -14,26 +15,27 @@
     </head>
 
     <body>
+    <div class="content">
         <header>
-            <h1>Formularz kontaktowy</h1>
+            <h1 style="color: #2d3436;">Formularz kontaktowy</h1>
         </header>
         <form autocomplete="on">
             <p>
-                <b>Imię:</b>
+                <strong>Imię:</strong>
                 <input type="text" id="firstName" autofocus/>
-                (podaj swoje imię, np. Karol)
+                <span class="fill_hint">(podaj swoje imię, np. Karol)</span>
             </p>
 
             <p>
-                <b>Nazwisko*:</b>
+                <strong class="req" >Nazwisko:</strong>
                 <input type="text" id="lastName" required>
-                (podaj swoje nazwisko, np. Kowalski)
+                <span class="fill_hint">(podaj swoje nazwisko, np. Kowalski)</span>
             </p>
 
             <p>
-                <b>Miesiąc urodzenia:</b>
+                <strong>Miesiąc urodzenia:</strong>
                 <input type="text" id="txtList" placeholder="Wybierz miesiąc" list="months">
-                (należy wybrać jeden z podpowiadanych miesięcy)
+                <span class="fill_hint">(należy wybrać jeden z podpowiadanych miesięcy)</span>
                 <datalist id="months">
                     <option value="Styczeń">
                     <option value="Luty">
@@ -51,26 +53,26 @@
             </p>
 
             <p>
-                <b>Email:</b> <input type="email" id="email" required>
-                (nazwa@twojadomena.pl)
+                <strong class="req">Email:</strong> <input type="email" id="email" required>
+                <span class="fill_hint">(nazwa@twojadomena.pl)</span>
             </p>
 
             <p>
-                <b>Telefon:</b> <input type="tel" id="tel" pattern="\d{3} \d{3} \d{3}">
-                (### ### ###)
+                <strong>Telefon:</strong> <input type="tel" id="tel" pattern="\d{3} \d{3} \d{3}">
+                <span class="fill_hint">(### ### ###)</span>
             </p>
 
             <input id="cons_res" type="checkbox" name="consent" value="respond" required>
             <label for="cons_res">
-                Wyrażam zgodę na kontakt mailowy na podany adres w celu <b>odpowiedzi</b> na moją wiadomość.
+                Wyrażam zgodę na kontakt mailowy na podany adres w celu <em>odpowiedzi</em> na moją wiadomość.
             </label><br>
             <input id="cons_mark" type="checkbox" name="consent" value="marketing">
             <label for="cons_mark">
-                Wyrażam zgodę na kontakt mailowy na podany adres w celach <b>marketingowych</b>.
+                Wyrażam zgodę na kontakt mailowy na podany adres w celach <em>marketingowych</em>.
             </label>
 
             <p>
-                <b>Temat:</b>
+                <strong>Temat:</strong>
                 <select name="topic" required>
                     <option value="" disabled selected>Wybierz temat</option>
                     <optgroup label="Pomoc">
@@ -84,22 +86,20 @@
                 </select>
             </p>
 
-            <b>Jak się do Ciebie odnieść:</b><br>
+            <strong>Jak się do Ciebie odnieść:</strong><br>
             <input type="radio" name="gender" value="male" checked required> Pan<br>
             <input type="radio" name="gender" value="female"> Pani<br>
 
-            <b>Twoja wiadomość:</b><br>
+            <strong>Twoja wiadomość:</strong><br>
             <textarea id="msg" name="message" rows="5" cols="50" maxlength="200" placeholder="Tutaj pisz..." required></textarea><br>
             <input type="reset" value="Wyczyść formularz">
             <input type="submit" value="Wyślij formularz">
         </form>
-        
-        <p>
-            <a href="additional_form.html">Wypełnij formularz dodatkowy!</a>
-        </p>
 
         <footer>
-            <a href="index.html">Powrót na stronę główną</a>
+            <a class="button" href="index.html">Powrót na stronę główną</a>
+            <a class="button" href="additional_form.html">Wypełnij formularz dodatkowy!</a>
         </footer>
+    </div>
     </body>
 </html>

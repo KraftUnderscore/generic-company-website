@@ -1,0 +1,34 @@
+header {background-color: #e17055;
+        text-align: center;
+        font-size: large;}
+body {background-image: url("photos/background_contact_form.jfif");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      color: #2d3436;}
+em {color: #e17055;
+    font-weight: bolder;}
+option {color: #dfe6e9}
+optgroup option {color: #2d3436;}
+.req {text-decoration: underline;
+      font-weight: bolder;
+      color: #ff7675}
+.button {text-decoration: none;
+       color: #2d3436;
+       background-color: #e17055;}
+.button:hover {text-decoration: underline;
+        color: #2d3436;
+        background-color: #d63031;}
+footer {padding-left: 10%;
+      padding-right: 10%;
+      padding-top: 3%;
+      margin: 0 auto;}
+.fill_hint {font-size: small;
+            color: #b2bec3;
+            position: relative;}
+.content {background-color: #fff9fb;
+            width: 70%;
+            margin: 0 auto;}
+form {padding-left: 10%;
+      padding-right: 10%;
+      margin: 0 auto;}

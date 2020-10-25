@@ -1,0 +1,65 @@
+
+body{
+    background-image: url("money.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+
+    background-color: #55efc4;
+    font-family: sans-serif;
+    font-size: medium;
+
+ 
+}
+nav{
+    background-color: #55efc4;
+    width: 50em;
+    text-align: center;
+}
+
+h4{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: #e84393;
+}
+
+
+header{
+
+    color: #2d3436;
+    font-size: 20pt;
+    background-color: #00b894;
+    
+}
+
+section{
+
+    background-color: #ffeaa7;
+
+}
+
+#manifest{
+    color: #0984e3;
+}
+
+h4{
+    background-color: #fdcb6e;
+}
+
+/* wszytko do dropdown menu*/
+
+.parent{
+    display: block;
+}
+.parent:hover > ul{
+    display: block;
+}
+.child{
+    display: none;
+}

@@ -1,57 +1,62 @@
 
 body{
-    background-image: url("money.jpg");
+    background-image: url("../photos/money.jpg");
     background-repeat: repeat;
     background-attachment: fixed;
 
     background-color: #55efc4;
     font-family: sans-serif;
     font-size: medium;
-
- 
 }
 nav{
     background-color: #55efc4;
     width: 50em;
     text-align: center;
 }
-
 h4{
     font-size: 18px;
     font-weight: 500;
 }
-
 a{
     text-decoration: none;
 }
-
 a:hover{
     color: #e84393;
 }
-
-
 header{
-
     color: #2d3436;
     font-size: 20pt;
     background-color: #00b894;
-    
 }
-
 section{
-
     background-color: #ffeaa7;
-
 }
-
 #manifest{
     color: #0984e3;
 }
-
 h4{
     background-color: #fdcb6e;
 }
-
+.partner_info{
+    width: 350px;
+    text-align: center;
+    vertical-align: top;
+}
+.partner_content{
+    background-color: #ffeaa7;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+}
+.partner_content table{
+    border-width: 5px;
+    border-style: groove;
+    border-collapse: collapse;
+}
+.partner_content table th, td{
+    border-width: 2px;
+    border-style: dotted;
+}
 /* wszytko do dropdown menu*/
 
 .parent{

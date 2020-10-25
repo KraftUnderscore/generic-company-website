@@ -5,19 +5,19 @@ header {
       font-variant: small-caps;
 }
 .background_no_repeat {
-      background-image: url("photos/background_beautiful.jfif");
+      background-image: url("../photos/background_beautiful.jfif");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 100% 100%;
 }
 .background_repeat_y {
-      background-image: url("photos/background_beautiful.jfif");
+      background-image: url("../photos/background_beautiful.jfif");
       background-repeat: repeat-y;
       background-position: center;
       background-size: 100% 80%;
 }
 .background_repeat {
-      background-image: url("photos/background_text.png");
+      background-image: url("../photos/background_text.png");
       background-repeat: repeat;
 }
 body {

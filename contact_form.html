@@ -14,7 +14,7 @@
         </style>
     </head>
 
-    <body>
+    <body class="background_repeat">
     <div class="content">
         <header>
             <h1 style="color: #2d3436;">Formularz kontaktowy</h1>
@@ -62,15 +62,16 @@
                 <span class="fill_hint">(### ### ###)</span>
             </p>
 
-            <input id="cons_res" type="checkbox" name="consent" value="respond" required>
-            <label for="cons_res">
-                Wyrażam zgodę na kontakt mailowy na podany adres w celu <em>odpowiedzi</em> na moją wiadomość.
-            </label><br>
-            <input id="cons_mark" type="checkbox" name="consent" value="marketing">
-            <label for="cons_mark">
-                Wyrażam zgodę na kontakt mailowy na podany adres w celach <em>marketingowych</em>.
-            </label>
-
+            <div id="consent">
+                <input id="cons_res" type="checkbox" name="consent" value="respond" required>
+                <label for="cons_res">
+                    Wyrażam zgodę na kontakt mailowy na podany adres w celu <em>odpowiedzi</em> na moją wiadomość.
+                </label><br>
+                <input id="cons_mark" type="checkbox" name="consent" value="marketing">
+                <label for="cons_mark">
+                    Wyrażam zgodę na kontakt mailowy na podany adres w celach <em>marketingowych</em>.
+                </label>
+            </div>
             <p>
                 <strong>Temat:</strong>
                 <select name="topic" required>

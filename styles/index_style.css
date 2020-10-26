@@ -68,3 +68,14 @@ h4{
 .child{
     display: none;
 }
+
+.child:hover{
+    background-color: #00b894;
+}
+
+a:active{
+    font-weight: bolder;
+}
+h4:active{
+    font-weight: bold;
+}

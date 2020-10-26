@@ -4,17 +4,26 @@ header {
       font-size: large;
       font-variant: small-caps;
 }
-.background_no_repeat {
-      background-image: url("../photos/background_beautiful.jfif");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100% 100%;
+@media screen and (min-width: 500px){
+      .background_repeat_y {
+            background-image: url("../photos/background_beautiful.jfif");
+            background-repeat: repeat-y;
+            background-position: center;
+            background-size: 100% 80%;
+      }
 }
-.background_repeat_y {
-      background-image: url("../photos/background_beautiful.jfif");
-      background-repeat: repeat-y;
-      background-position: center;
-      background-size: 100% 80%;
+@media screen and (min-width: 1000px){
+      .background_repeat_y {
+            background-image: url("../photos/background_beautiful.jfif");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+      }
+}
+@media print{
+      body {
+            padding-top: 25%;
+      }
 }
 .background_repeat {
       background-image: url("../photos/background_text.png");

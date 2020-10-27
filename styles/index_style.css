@@ -10,29 +10,41 @@ body{
 }
 nav{
     background-color: #55efc4;
-    width: 50em;
+
     text-align: center;
+    margin: auto;
+    padding: 3px;
+    background-position: center;
 }
 h4{
     font-size: 18px;
     font-weight: 500;
 }
+
 a{
     text-decoration: none;
 }
 a:hover{
     color: #e84393;
 }
+
 header{
     color: #2d3436;
     font-size: 20pt;
     background-color: #00b894;
+    text-align: center;
 }
 section{
     background-color: #ffeaa7;
 }
+
 #manifest{
     color: #0984e3;
+}
+#manifest_content{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
 }
 h4{
     background-color: #fdcb6e;
@@ -64,13 +76,16 @@ h4{
 }
 .parent:hover > ul{
     display: block;
+
 }
 .child{
     display: none;
+
 }
 
 .child:hover{
     background-color: #00b894;
+
 }
 
 a:active{
@@ -78,4 +93,7 @@ a:active{
 }
 h4:active{
     font-weight: bold;
+}
+ul{
+    list-style-type: none;
 }

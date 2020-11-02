@@ -10,29 +10,44 @@ body{
 }
 nav{
     background-color: #55efc4;
-    width: 50em;
+
     text-align: center;
+    margin: auto;
+    padding: 3px;
+    background-position: center;
 }
 h4{
     font-size: 18px;
     font-weight: 500;
 }
+
 a{
     text-decoration: none;
 }
 a:hover{
     color: #e84393;
 }
+
 header{
     color: #2d3436;
     font-size: 20pt;
-    background-color: #00b894;
+    background-image: radial-gradient(#55efc4, #fdcb6e);
+    text-align: center;
+    animation-name: font_size_change;
+    animation-duration: 3s;
 }
+
 section{
     background-color: #ffeaa7;
 }
+
 #manifest{
     color: #0984e3;
+}
+#manifest_content{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
 }
 h4{
     background-color: #fdcb6e;
@@ -59,12 +74,91 @@ h4{
 }
 /* wszytko do dropdown menu*/
 
-.parent{
-    display: block;
+
+
+h4:active{
+    font-weight: bold;
 }
-.parent:hover > ul{
-    display: block;
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-.child{
+nav{
+    width: 100%;
+    height: 1rem;
+    transition: height .2s ease;
+    margin: 0;
+    padding: 0;
+    box-shadow: 3px 3px 3px black;
+}
+
+nav:hover{
+    height: 5rem;
+
+}
+
+.navbar-nav{
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.nav-item:hover > .nav-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 4rem;
+    background-color: #05ac8a;
+}
+
+.nav-child{
     display: none;
+    box-shadow: 3px 3px 3px black;
 }
+
+.nav-child > li:hover{
+    border-bottom: 2px solid;
+}
+
+.nav-item{
+    width: 25%;
+    height: 1rem;
+    padding: 0;
+    margin: 0;
+    box-shadow: 3px 3px 3px black;
+    transition: width .2s ease;
+}
+
+.nav-item:hover{
+    width: 35%;
+}
+
+
+@keyframes font_size_change{
+    from{font-size: 1pt;}
+    to{font-size: 20pt;}
+}
+
+article > p{
+    column-count: 2;
+    column-gap: 40px;
+    column-rule: 1px solid black;
+}
+
+figure:active{
+    transform: rotate(3deg);
+}
+
+h4:hover{
+    transform: translate(30px,0px);
+}
+
+@media screen and (max-width: 800px) {
+    article > p  {
+        column-count: 1;
+    }
+  }

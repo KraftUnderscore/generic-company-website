@@ -6,18 +6,18 @@ header {
 }
 @media screen and (min-width: 500px){
       .background_repeat_y {
-            background-image: url("../photos/background_beautiful.jfif");
-            background-repeat: repeat-y;
-            background-position: center;
-            background-size: 100% 80%;
+            background-image: url("/photos/biznes_logo.png"), url("../photos/background_beautiful.jfif");
+            background-repeat: no-repeat,  repeat-y;
+            background-position: bottom right, center;
+            background-size: 10% 10%, 100% 80%;
       }
 }
 @media screen and (min-width: 1000px){
       .background_repeat_y {
-            background-image: url("../photos/background_beautiful.jfif");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 100% 100%;
+            background-image: url("/photos/biznes_logo.png"), url("../photos/background_beautiful.jfif");
+            background-repeat: no-repeat,  no-repeat;
+            background-position: bottom right, center;
+            background-size: 10% 10%, 100% 100%;
       }
 }
 @media print{
@@ -31,8 +31,11 @@ header {
       src: url("../fonts/SyneTactile-Regular.ttf");
 }
 .background_repeat {
-      background-image: url("../photos/background_text.png");
-      background-repeat: repeat;
+      background-image: url("/photos/biznes_logo.png"), url("../photos/background_text.png");
+      background-repeat: no-repeat,  repeat;
+      background-position: bottom right, center;
+      background-origin: content-box, border-box;
+      background-size: 10% 10%, auto;
 }
 body {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -104,10 +107,14 @@ input:required:focus{
       }
 }
 footer {
-      padding-left: 10%;
-      padding-right: 10%;
-      padding-top: 3%;
-      margin: 0 auto;
+      margin: 1em;
+      padding: 1em;
+      padding-left: 20%;
+      border-style: solid;
+      border-image-source: url("/photos/fancy_border.png");
+      border-width: 1em;
+      border-image-slice: 27;
+      border-image-repeat: round;
 }
 .fill_hint {
       font-size: small;

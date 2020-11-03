@@ -6,18 +6,18 @@ header {
 }
 @media screen and (min-width: 500px){
       .background_repeat_y {
-            background-image: url("../photos/background_beautiful.jfif");
-            background-repeat: repeat-y;
-            background-position: center;
-            background-size: 100% 80%;
+            background-image: url("/photos/biznes_logo.png"), url("../photos/background_beautiful.jfif");
+            background-repeat: no-repeat,  repeat-y;
+            background-position: bottom right, center;
+            background-size: 10% 10%, 100% 80%;
       }
 }
 @media screen and (min-width: 1000px){
       .background_repeat_y {
-            background-image: url("../photos/background_beautiful.jfif");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 100% 100%;
+            background-image: url("/photos/biznes_logo.png"), url("../photos/background_beautiful.jfif");
+            background-repeat: no-repeat,  no-repeat;
+            background-position: bottom right, center;
+            background-size: 10% 10%, 100% 100%;
       }
 }
 @media print{
@@ -25,13 +25,24 @@ header {
             padding-top: 25%;
       }
 }
+
+@font-face{
+      font-family: "SyneTactile";
+      src: url("../fonts/SyneTactile-Regular.ttf");
+}
 .background_repeat {
-      background-image: url("../photos/background_text.png");
-      background-repeat: repeat;
+      background-image: url("/photos/biznes_logo.png"), url("../photos/background_text.png");
+      background-repeat: no-repeat,  repeat;
+      background-position: bottom right, center;
+      background-origin: content-box, border-box;
+      background-size: 10% 10%, auto;
 }
 body {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       color: #2d3436;
+}
+h1 {
+      text-shadow: 2pt 2pt 1pt #e0d786 ;
 }
 em {
       color: #e17055;
@@ -39,6 +50,11 @@ em {
 }
 #consent{
       line-height: 130%;
+      font-size: small;
+      border-color: #ff7675;
+      border-style: solid;
+      border-radius: 1.25em;
+      padding: 0.5em;
 }
 .req {
       text-decoration: underline;
@@ -53,30 +69,52 @@ optgroup option:checked{
       color: #fab1a0;
 }
 input:focus{
-      background-color: #c7f5f5;
+      background-color: rgba(199, 245, 245, 0.5);
 }
 input:required:focus{
-      background-color: #fab1a0;
+      background-color: rgba(250, 176, 160, 0.25);
 }
 .button {
+      padding: 0.5em;
       text-decoration: none;
       color: black;
       background-color: #e17055;
       border-width: thin;
       border-style: groove;
-      border-radius: 5%;
+      border-radius: 0.5em;
 }
 .button:hover {
       text-decoration: underline;
-      border-bottom-width: medium;
-      border-right-width: medium;
-      border-color: #d63031;
+      box-shadow: 0.1em 0.1em 0.1em hsla(360, 67%, 51%);
+      animation-duration: 0.125s;
+      animation-name: btn_gradient;
+}
+@keyframes btn_gradient{
+      from{
+            background: linear-gradient(0.25turn, #e0d786, #e17055, #e17055, #e17055, #e17055);
+      }
+      25%{
+            background: linear-gradient(0.25turn, #e17055, #e0d786, #e17055, #e17055, #e17055);
+      }
+      50%{
+            background: linear-gradient(0.25turn, #e17055, #e17055, #e0d786, #e17055, #e17055);
+      }
+      75%{
+            background: linear-gradient(0.25turn, #e17055, #e17055, #e17055, #e0d786, #e17055);
+      }
+      to{
+            background: linear-gradient(0.25turn, #e17055, #e17055, #e17055, #e17055, #e0d786);
+      }
 }
 footer {
-      padding-left: 10%;
-      padding-right: 10%;
-      padding-top: 3%;
-      margin: 0 auto;
+      margin: 1em;
+      padding: 1em;
+      padding-left: 20%;
+      border-style: solid;
+      border-image-source: url("/photos/fancy_border.png");
+      border-width: 1em;
+      border-image-slice: 27;
+      border-image-repeat: round;
 }
 .fill_hint {
       font-size: small;
@@ -89,6 +127,10 @@ footer {
       width: 75%;
       margin: auto;
       padding-bottom: 2.5%;
+}
+textarea {
+      font-family: 'SyneTactile', sans-serif;
+      resize: none;
 }
 form {
       padding-left: 10%;

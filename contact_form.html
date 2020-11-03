@@ -17,7 +17,7 @@
     <body class="background_repeat">
     <div class="content">
         <header>
-            <h1 style="color: #2d3436;">Formularz kontaktowy</h1>
+            <h1>Formularz kontaktowy</h1>
         </header>
         <form autocomplete="on">
             <p>
@@ -62,16 +62,6 @@
                 <span class="fill_hint">(### ### ###)</span>
             </p>
 
-            <div id="consent">
-                <input id="cons_res" type="checkbox" name="consent" value="respond" required>
-                <label for="cons_res">
-                    Wyrażam zgodę na kontakt mailowy na podany adres w celu <em>odpowiedzi</em> na moją wiadomość.
-                </label><br>
-                <input id="cons_mark" type="checkbox" name="consent" value="marketing">
-                <label for="cons_mark">
-                    Wyrażam zgodę na kontakt mailowy na podany adres w celach <em>marketingowych</em>.
-                </label>
-            </div>
             <p>
                 <strong>Temat:</strong>
                 <select name="topic" required>
@@ -93,8 +83,23 @@
 
             <strong>Twoja wiadomość:</strong><br>
             <textarea id="msg" name="message" rows="5" cols="50" maxlength="200" placeholder="Tutaj pisz..." required></textarea><br>
-            <input type="reset" value="Wyczyść formularz">
-            <input type="submit" value="Wyślij formularz">
+
+            <div id="consent">
+                <input id="cons_res" type="checkbox" name="consent" value="respond" required>
+                <label for="cons_res">
+                    Wyrażam zgodę na kontakt mailowy na podany adres w celu <em>odpowiedzi</em> na moją wiadomość.
+                </label><br>
+                <input id="cons_mark" type="checkbox" name="consent" value="marketing">
+                <label for="cons_mark">
+                    Wyrażam zgodę na kontakt mailowy na podany adres w celach <em>marketingowych</em>.
+                </label>
+            </div>
+
+            <div style="margin-top: 1em;">
+                <input type="reset" value="Wyczyść formularz">
+                <input type="submit" value="Wyślij formularz">
+            </div>
+
         </form>
 
         <footer>

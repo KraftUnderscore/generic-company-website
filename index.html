@@ -14,52 +14,38 @@
             <h1>Biznes</h1>
         </header>
         
-        <nav>
-        
-                <ul>
-                    <li class="parent"><a href="#">Menu</a>                    
-                    <ul class="child">
-                        <li class="parent"><a href="#">Manifest</a>
-                            <ul class="child">
-                                <li><a href="#manifest">Lokalna</a></li>
-                            </ul>
-                            </li>
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#manifest">Manifest</a>
+                    <ul class="nav-child">
+                        <li><a href="#manifest">Wersja skrócona</a></li>
+                        <li><a href="#manifest">Wersja pełna</a></li>
                     </ul>
-                    <ul class="child">
-                        <li class="parent"><a href="#">Partnerzy</a>
-                            <ul class="child">
-                                <li><a href="#partners">lokalna</a></li>
-                                <li><a href="partners.html">nie lokalna</a></li>
-                            </ul>
-                        </li>
+                </li>
+                <li class="nav-item">
+                    <a href="partners.html">Partnerzy</a>
+                    <ul class="nav-child">
+                        <li><a href="#partners">Lokalnie</a></li>
+                        <li><a href="partners.html">Odnośnik</a></li>
                     </ul>
-                    <ul class="child">
-                        <li class="parent"><a href="#">Projekty</a>
-                            <ul class="child">
-                                <li><a href="#projects">lokalna</a></li>
-                                <li><a href="projects.html">nie lokalna</a></li>
-                            </ul>
-                    </li></ul>
-                    <ul class="child">
-                        <li class="parent"><a href="#">Filantropia</a>
-                            <ul class="child">
-                                <li><a href="#philantropy">lokalna</a></li>
-                                <li><a href="filantropia.html">nie lokalna</a></li>
-                            </ul>
-                    </li></ul>
-                    <ul class="child">
-                        <li class="parent"><a href="#">Kontakt</a>
-                            <ul class="child">
-                                <li><a href="#contact">lokalna</a></li>
-                            </ul>
-                    </li></ul>
-                    </li>
-                </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html">Projekty</a>
+                    <ul class="nav-child">
+                        <li><a href="#projects">Lokalnie</a></li>
+                        <li><a href="projects.html">Odnośnik</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="contact_form.html">Filantropia</a>
+                    <ul class="nav-child">
+                        <li><a href="#philantropy">Lokalnie</a></li>
+                        <li><a href="filantropia.html">Odnośnik</a></li>
+                    </ul>
+                </li>
+            </ul>               
                 
-                
-                
-                
-            
         </nav>
 
         
@@ -69,7 +55,7 @@
                 <article>
                     <h4>Manifest</h4>
 
-                    <p>
+                    <p id="manifest_content">
                         Zdajemy sobie sprawę z problemów z jakimi zmaga się Polska.<mark> Naszym zadaniem jest zapewnienie
                         wzrostu gospodarczego i nowych miejsc pracy.</mark> Znajdujemy nowe rynki zbytu, kreujemy nowe produkty
                         i usługi, poprawiamy organizację pracy oraz budujemy zaufanie w relacjach z pracownikami.

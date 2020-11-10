@@ -101,7 +101,11 @@
                             <span id="monthCost">0</span>zł/msc
                         </p>
                         <p>
-                            Łączny koszt: 
+                            Przewidywany łączny koszt na dzień
+                            <script>
+                                let today = new Date();
+                                document.write(today.toLocaleDateString());
+                            </script>:
                             <span id="totalCost">0</span>zł
                         </p>
                         <p id="progressBar"></p>

@@ -16,6 +16,11 @@ function insertIfNecessary(e){
     if(settings == null){
         createSettings();
     }else{
+        if(settings.style.display != "none"){
+            settings.style.display = "none";
+        }else{
+            settings.style.display = "inline-flex";
+        }
     }
 
 }

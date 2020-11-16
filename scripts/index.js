@@ -1,4 +1,3 @@
-
 window.onload = function(){
     window.addEventListener("mousemove", getCursorXY, false);
     var answer = prompt("Chciałbyś się z nami skontaktować?","Nie");
@@ -9,7 +8,6 @@ window.onload = function(){
 
     document.getElementById("title_name").addEventListener("click",insertIfNecessary,false)
 }
-
 
 function insertIfNecessary(e){
     let settings = document.getElementById("settings");
@@ -51,17 +49,47 @@ function createSettings(){
     document.getElementById("title").appendChild(settings);
 }
 function changeFontTo1(e){
-    document.getElementById("body").style.fontFamily = "'Roboto'";
+    document.getElementById("body").style.fontFamily = "Roboto";
+    changeCollections(1);
 }
 
 function changeFontTo2(e){
     document.getElementById("body").style.fontFamily = "Big Shoulders Stencil Text";
+    changeCollections(2);
 }
 
 function changeFontTo3(e){
     document.getElementById("body").style.fontFamily = "sans-serif";
-
+    changeCollections(3);
 }
+
+function changeCollections(type) {
+    switch(type){
+        case 1:
+            changeCollection(300, 200, "sans-serif");
+            break;
+        case 2:
+            changeCollection(600, 400, "Roboto");
+            break;
+        case 3:
+            changeCollection(1200, 800, "Big Shoulders Stencil Text");
+            break;
+    }
+}
+
+function changeCollection(w, h, font) {
+    imgs = document.images;
+    for(let i = 0; i < imgs.length; i++) {
+        imgs[i].width = w;
+        imgs[i].height = h;
+    }
+
+    anchors = document.links;
+    for(let i = 0; i < anchors.length; i++) {
+        anchors[i].style.fontFamily = font;
+    }
+}
+
 function movePicture(e){
     scroll_position = Math.trunc(window.scrollY);
     picture = document.getElementById('partners_pic');

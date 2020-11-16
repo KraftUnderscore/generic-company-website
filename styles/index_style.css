@@ -49,7 +49,7 @@ section{
     padding-right: 30px;
     padding-bottom: 30px;
 }
-h4{
+section h4{
     background-color: #fdcb6e;
 }
 .partner_info{
@@ -153,12 +153,28 @@ figure:active:not(#partners-table){
     transform: rotate(3deg);
 }
 
-h4:hover{
-    transform: translate(30px,0px);
-}
-
 @media screen and (max-width: 800px) {
     article > p  {
         column-count: 1;
     }
   }
+
+  #settings{
+    display: inline-flex;
+  }
+
+  #settings  li{
+      display: none;
+  }
+
+  #settings:hover li{
+      display: block;
+      width: 10rem;
+      height: 1.5rem;
+      margin: 0;
+      padding: 0;
+      font-size: medium;
+  }
+
+
+  

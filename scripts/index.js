@@ -50,18 +50,35 @@ function createSettings(){
 }
 
 function changeFontTo1(e){
+    if(window.event.ctrlKey){
+        changeBackgroudColorOfCollection("#ffeaa7",document.getElementsByTagName("section"));
+    }else{
     document.getElementById("body").style.fontFamily = "Roboto";
     changeCollections(1);
+    }
 }
 
 function changeFontTo2(e){
+    if(window.event.ctrlKey){
+        changeBackgroudColorOfCollection("red",document.getElementsByTagName("section"));
+    }else{
     document.getElementById("body").style.fontFamily = "Big Shoulders Stencil Text";
     changeCollections(2);
+    }
 }
 
 function changeFontTo3(e){
+    if(window.event.ctrlKey){
+        changeBackgroudColorOfCollection("white",document.getElementsByTagName("section"));
+    }else{        
     document.getElementById("body").style.fontFamily = "sans-serif";
     changeCollections(3);
+    }
+}
+
+function changeBackgroudColorOfCollection(color, collection){
+    for (item of collection)
+        item.style.backgroundColor = color;
 }
 
 function changeCollections(type) {

@@ -10,7 +10,7 @@ var lastLowerNode;
 function addListenerToObject(id) {
     let node = document.getElementById(id);
     node.addEventListener("focus",
-        function(){
+        function () {
             lastUpperNode = document.createElement("p");
             lastUpperNode.innerHTML = "+-+-+-+-+-+-+-+-+-+-+";
             lastLowerNode = document.createElement("p");
@@ -20,7 +20,7 @@ function addListenerToObject(id) {
         })
 
     node.addEventListener("blur",
-        function(){
+        function () {
             node.parentNode.removeChild(lastUpperNode);
             node.parentNode.removeChild(lastLowerNode);
         })
@@ -29,15 +29,15 @@ function addListenerToObject(id) {
 function addFormListener() {
     let form = document.getElementById('form');
     form.addEventListener('submit',
-        function() {
+        function () {
             return confirm("Na pewno chcesz przesłać formularz?");
         })
     form.addEventListener('reset',
-        function() {
+        function () {
             return confirm("Na pewno chcesz wyczyścić formularz?");
         })
 }
 
-window.onload = function() {
+window.onload = function () {
     init();
 }

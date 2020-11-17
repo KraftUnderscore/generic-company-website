@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Business contact form">
-        <meta name="keywords" content="contact, form, help, business">
-        <title>Formularz kontaktowy</title>
 
-        <link rel="stylesheet" type="text/css" href="styles/forms.css">
-        <style>
-            textarea {
-                resize: none;
-            }
-        </style>
-        <script src="scripts/forms.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Business contact form">
+    <meta name="keywords" content="contact, form, help, business">
+    <title>Formularz kontaktowy</title>
 
-    <body class="background_repeat">
+    <link rel="stylesheet" type="text/css" href="styles/forms.css">
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+    <script src="scripts/forms.js"></script>
+</head>
+
+<body class="background_repeat">
     <div class="content">
         <header>
             <h1>Formularz kontaktowy</h1>
@@ -23,12 +24,12 @@
         <form id="form" autocomplete="on">
             <p>
                 <strong>Imię:</strong>
-                <input type="text" id="firstName" autofocus/>
+                <input type="text" id="firstName" autofocus />
                 <span class="fill_hint">(podaj swoje imię, np. Karol)</span>
             </p>
 
             <p>
-                <strong class="req" >Nazwisko:</strong>
+                <strong class="req">Nazwisko:</strong>
                 <input type="text" id="lastName" required>
                 <span class="fill_hint">(podaj swoje nazwisko, np. Kowalski)</span>
             </p>
@@ -83,7 +84,8 @@
             <input type="radio" name="gender" value="female"> Pani<br>
 
             <strong>Twoja wiadomość:</strong><br>
-            <textarea id="msg" name="message" rows="5" cols="50" maxlength="200" placeholder="Tutaj pisz..." required></textarea><br>
+            <textarea id="msg" name="message" rows="5" cols="50" maxlength="200" placeholder="Tutaj pisz..."
+                required></textarea><br>
 
             <div id="consent">
                 <input id="cons_res" type="checkbox" name="consent" value="respond" required>
@@ -108,5 +110,6 @@
             <a class="button" href="additional_form.html">Wypełnij formularz dodatkowy!</a>
         </footer>
     </div>
-    </body>
+</body>
+
 </html>

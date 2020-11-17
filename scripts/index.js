@@ -50,6 +50,7 @@ function createSettings(){
     settings.appendChild(child);
     document.getElementById("title").appendChild(settings);
 }
+
 function changeFontTo1(e){
     document.getElementById("body").style.fontFamily = "'Roboto'";
 }

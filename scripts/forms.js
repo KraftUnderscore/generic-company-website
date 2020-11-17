@@ -10,9 +10,13 @@ var lastLowerNode;
 function addListenerToObject(id) {
     let node = document.getElementById(id);
     node.addEventListener("focus",
-        function(){
+        function () {
             lastUpperNode = document.createElement("p");
             lastUpperNode.innerHTML = "+-+-+-+-+-+-+-+-+-+-+";
+            hint = document.createElement("p");
+            hint.classList.add('fill_hint');
+            hint.innerHTML = chooseHintText(id);
+            lastUpperNode.appendChild(hint);
             lastLowerNode = document.createElement("p");
             lastLowerNode.innerHTML = "-+-+-+-+-+-+-+-+-+-+-";
             node.parentNode.insertBefore(lastUpperNode, node);
@@ -20,24 +24,46 @@ function addListenerToObject(id) {
         })
 
     node.addEventListener("blur",
-        function(){
+        function () {
             node.parentNode.removeChild(lastUpperNode);
             node.parentNode.removeChild(lastLowerNode);
         })
 }
 
+function chooseHintText(id) {
+    let out = "";
+    switch (id) {
+        case 'firstName':
+            out = "(podaj swoje imię, np. Karol)";
+            break;
+        case 'lastName':
+            out = "(podaj swoje nazwisko, np. Kowalski)";
+            break;
+        case 'txtList':
+            out = "(należy wybrać jeden z podpowiadanych miesięcy)";
+            break;
+        case 'email':
+            out = "(nazwa@twojadomena.pl)";
+            break;
+        case 'tel':
+            out = "(### ### ###)";
+            break;
+    }
+    return out;
+}
+
 function addFormListener() {
-    let form = document.getElementById('form');
+    let form = document.getElementsByTagName('form').item(0);
     form.addEventListener('submit',
-        function() {
+        function () {
             return confirm("Na pewno chcesz przesłać formularz?");
         })
     form.addEventListener('reset',
-        function() {
+        function () {
             return confirm("Na pewno chcesz wyczyścić formularz?");
         })
 }
 
-window.onload = function() {
+window.onload = function () {
     init();
 }

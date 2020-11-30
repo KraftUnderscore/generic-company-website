@@ -1,0 +1,48 @@
+body {
+    background-color: #F9D7C8;
+    color: #202A25;
+}
+
+h1 {
+    background-color: #F7D0A1;
+    margin: 0;
+    text-align: center;
+    padding: 1em;
+}
+
+nav {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #f2b469;
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    width: 100%;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #EDA063;
+}
+
+section {
+    margin: 2%;
+    padding: 2%;
+    background-color: #F7CBA1;
+}
+
+.comment p {
+    font-style: italic;
+}
+
+.comment {
+    border-bottom: 1px solid #202A25;
+}

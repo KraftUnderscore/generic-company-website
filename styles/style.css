@@ -7,7 +7,32 @@ h1 {
     background-color: #F7D0A1;
     margin: 0;
     text-align: center;
-    padding: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.orders {
+    margin: 2%;
+    padding: 2%;
+    background-color: #F7CBA1;
+    
+}
+
+.orders h3 {
+    text-align: center;
+}
+
+.orders li {
+    list-style-type: none;
+    border-bottom: 1px solid #202A25;
+    margin-right: 30%;
+    margin-left: 5%;
 }
 
 nav {
@@ -39,10 +64,30 @@ section {
     background-color: #F7CBA1;
 }
 
+footer {
+    margin-top: 2%;
+    padding: 2%;
+    background-color: #f2b469;
+}
+
 .comment p {
     font-style: italic;
 }
 
 .comment {
     border-bottom: 1px solid #202A25;
+}
+
+.login {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 20%;
+    margin-top: 10%;
+    margin-right: 20%;
+    background-color: #F7CBA1;
+    text-align: center;
+    border-color: #202A25;
+    border-width: 0.1em;
+    border-style: solid;
+    border-radius: 1em;
 }

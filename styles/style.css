@@ -78,6 +78,11 @@ footer {
     border-bottom: 1px solid #202A25;
 }
 
+.error {
+    color: red;
+    font-size: xx-large;
+}
+
 .login {
     padding-top: 5%;
     padding-bottom: 5%;

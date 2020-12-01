@@ -1,3 +1,8 @@
+<?php
+    $login = (string)$_POST["email"];
+    $is_valid = preg_match("/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/", $login) && strlen($_POST["password"]) > 0;
+?>
+
 <!DOCTYPE html>
 <html lang="pl-PL">
 
@@ -19,7 +24,14 @@
         <a href="index.php">Nasze wypieki</a>
     </nav>
 
-    <h2>Witaj z powrotem, kliencie!</h2>
+    <?php
+        if(!$is_valid){
+            print("<p class='error'>NIEPOPRAWNE DANE LOGOWANIA</p>");
+            die();
+        }
+    ?>
+
+    <h2>Witaj z powrotem, <?php print($login)?>!</h2>
 
     <div class="orders">
         <h3>Twoje zamówienia:</h3>
@@ -44,9 +56,7 @@
         </div>
     </div>
 
-    <footer>
-        Tutaj info z php
-    </footer>
+    <?php include 'sites/footer.php'?>
 </body>
 
 </html>

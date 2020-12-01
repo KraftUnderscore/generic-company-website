@@ -26,11 +26,18 @@ $is_form_valid = check_if_valid($start_date, $end_date);
     <meta charset="UTF-8">
     <meta name="piekarnia_oprogramowania" content="width=device-width">
     <title>Piekarnia oprogramowania</title>
-    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <link rel="stylesheet" type="text/css" href="/piekarnia/styles/index.css">
 </head>
 
 <body>
     <h1>Summary</h1>
+
+    <nav class="navbar">
+        <a href="/piekarnia/index.html">O nas</a>
+        <a href="/piekarnia/login.html">Panel klienta</a>
+        <a href="/piekarnia/index.php">Nasze wypieki</a>
+    </nav>
+
     <article class="project_summary">
         <div class="project_type">
             <header>Project type:</header>
@@ -66,7 +73,7 @@ $is_form_valid = check_if_valid($start_date, $end_date);
         </div>
         <div class="project_evaluation">
             <header>Is project valid and saved?</header>
-            <p><?php echo $is_form_valid?'true':'false';?></p>
+            <?php echo $is_form_valid?'<p style="color:green;">true</p>':'<p style="color:red;">false</p>';?>
         </div>
     </article>
 

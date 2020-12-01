@@ -7,9 +7,12 @@
         <link rel="stylesheet" type="text/css" href="styles/index.css">
     </head>
     <body>
-        <h1> Hello From WSL</h1>
-        Hello, today is <?php echo date('l, F jS, Y'); ?>.
-        <?php print( $_SERVER['REQUEST_URI'])?>
+        <h1> Piekarnia oprogramowania </h1>
+        <nav class="navbar">
+        <a href="index.html">O nas</a>
+        <a href="login.html">Panel klienta</a>
+        <a href="index.php">Nasze wypieki</a>
+    </nav>
 
 
         <article class="list_item">

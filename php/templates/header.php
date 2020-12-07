@@ -2,8 +2,8 @@
 
 function create_header($is_logged_in)
 {
-    $login_button = $is_logged_in ? '<a href="index.php?page=login">Zaloguj</a>'
-                                  : '<a href="index.php?page=login">Wyloguj</a>';
+    $login_button = $is_logged_in ? '<a href="index.php?page=login">Wyloguj</a>'
+                                  : '<a href="index.php?page=login">Zaloguj</a>';
     return '
         <header>
             <h1>Piekarnia Oprogramowania</h1>

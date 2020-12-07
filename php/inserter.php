@@ -52,7 +52,7 @@ function insert_login_content($after)
     include_once 'logic.php';
     include 'templates/login.php';
     if(is_session_active()) {
-        //end session here
+        $_SESSION['isAuthorized'] = False;
         insert_content("");
     } else {
         echo (create_login_content($after));
@@ -66,7 +66,6 @@ function insert_after_login_content()
     $password = isset($_POST["password"]) ? $_POST["password"] : "";
 
     if (is_login_valid($email, $password)) {
-        activate_session();
         $_SESSION['isAuthorized'] = 'True';
         setcookie('login',$email);
         $after = isset($_GET["after"]) ? $_GET["after"] : "";

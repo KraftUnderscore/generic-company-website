@@ -18,12 +18,14 @@ function is_login_valid($email, $password)
 
 function activate_session()
 {
-
+    return session_start();
 }
 
+//its more of a
+//is user logged
 function is_session_active()
 {
-    return true;
+    return isset($_SESSION['isAuthorized'])?$_SESSION['isAuthorized']: False;
 }
 
 function is_date_valid($d_1, $d_2)

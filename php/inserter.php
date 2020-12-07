@@ -42,6 +42,7 @@ function insert_footer()
 
 function insert_main_content()
 {
+    print(session_id());
     include 'templates/main.php';
     echo (create_main_content());
 }
@@ -65,7 +66,9 @@ function insert_after_login_content()
     $password = isset($_POST["password"]) ? $_POST["password"] : "";
 
     if (is_login_valid($email, $password)) {
-        activate_session(); //tutaj rozpocząć sesję
+        activate_session();
+        $_SESSION['isAuthorized'] = 'True';
+        setcookie('login',$email);
         $after = isset($_GET["after"]) ? $_GET["after"] : "";
         insert_content($after);
     } else {
@@ -79,7 +82,7 @@ function insert_client_panel()
     include_once 'logic.php';
     include 'templates/client_panel.php';
     if (is_session_active()) {
-        $email = 'TEST'; //WZIĄĆ Z DANYCH SESJI
+        $email = isset($_COOKIE['login']) ? $_COOKIE['login']:'Smth went wrong!!'; //WZIĄĆ Z DANYCH SESJI
         echo (create_client_panel_content($email));
     } else {
         echo (insert_login_content('client_panel'));
@@ -91,7 +94,7 @@ function insert_projects_list_content()
     include_once 'logic.php';
     include 'templates/projects_list.php';
     if (is_session_active()) {
-        $email = 'TEST'; //WZIĄĆ Z DANYCH SESJI
+        $email = isset($_COOKIE['login']) ? $_COOKIE['login']:'Smth went wrong!!'; //WZIĄĆ Z DANYCH SESJI
         echo (create_projects_list_content($email));
     } else {
         echo (insert_login_content('app_list'));

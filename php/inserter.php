@@ -29,8 +29,9 @@ function insert_content($page)
 
 function insert_header()
 {
+    include_once 'logic.php';
     include 'templates/header.php';
-    echo (create_header());
+    echo (create_header(is_session_active()));
 }
 
 function insert_footer()
@@ -47,8 +48,14 @@ function insert_main_content()
 
 function insert_login_content($after)
 {
+    include_once 'logic.php';
     include 'templates/login.php';
-    echo (create_login_content($after));
+    if(is_session_active()) {
+        //end session here
+        insert_content("");
+    } else {
+        echo (create_login_content($after));
+    }
 }
 
 function insert_after_login_content()

@@ -1,49 +1,29 @@
+<?php
+if(session_id() == '')
+    session_start()
+?>
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="piekarnia_oprogramowania" content="width=device-width">
-        <title>Piekarnia oprogramowania</title>
-        <link rel="stylesheet" type="text/css" href="styles/index.css">
-    </head>
-    <body>
-        <h1> Piekarnia oprogramowania </h1>
-        <nav class="navbar">
-        <a href="index.html">O nas</a>
-        <a href="login.html">Panel klienta</a>
-        <a href="index.php">Nasze wypieki</a>
-    </nav>
+<html lang="pl-PL">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Main page of Piekarnia Oprogramowania software house">
+    <meta name="keywords" content="softwarehouse, software, house, development, piekarnia, oprogramowania">
+    <title>Piekarnia Oprogramowania</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src=""></script>
+</head>
 
-        <article class="list_item">
-            <a href="sites/assigment_form.php/?android">
-        <img src='assets/android-logo.png' alt="android logo" width="30px" height="30px">
-            <p class="list_item_title">
-                Android Application
-            </p>
-        </a>
-            
-        </article>
-        
-        <article class="list_item">
-            <a href="sites/assigment_form.php/?web_app">
-        <img src='assets/www-logo.png' alt="www logo" width="30px" height="30px">
-            <p class="list_item_title">
-                Web Application
-            </p>
-        </a>
-            
-        </article>
+<body>
+    <?php
+    include 'php/inserter.php';
+    echo session_id();
+    insert_header();
+    $page_request = isset($_GET["page"]) ? $_GET["page"] : "";
+    insert_content($page_request);
+    insert_footer();
+    ?>
+</body>
 
-        
-        <article class="list_item">
-        <a href="sites/assigment_form.php/?swift">
-            <img src='assets/swift-logo.png' alt="swift logo" width="30px" height="30px">
-            <p class="list_item_title">
-                iOS Application
-            </p>
-        </a>            
-        </article>
-        <?php include 'sites/footer.php'?>
-    </body>
 </html>

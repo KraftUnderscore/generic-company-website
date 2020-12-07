@@ -21,9 +21,7 @@ function activate_session()
     return session_start();
 }
 
-//its more of a
-//is user logged
-function is_session_active()
+function is_logged_in()
 {
     return isset($_SESSION['isAuthorized'])?$_SESSION['isAuthorized']: False;
 }

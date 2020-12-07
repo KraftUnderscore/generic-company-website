@@ -42,7 +42,7 @@ function prepare_header()
 {
     include_once 'logic.php';
     include 'templates/header.php';
-    return create_header(is_session_active());
+    return create_header(is_logged_in());
 }
 
 function prepare_footer()
@@ -61,8 +61,9 @@ function prepare_login_content($after)
 {
     include_once 'logic.php';
     include 'templates/login.php';
-    if(is_session_active()) {
+    if (is_logged_in()) {
         $_SESSION['isAuthorized'] = False;
+        $_SESSION['login'] = '';
         return prepare_content("");
     } else {
         return create_login_content($after);
@@ -77,7 +78,7 @@ function prepare_after_login_content()
 
     if (is_login_valid($email, $password)) {
         $_SESSION['isAuthorized'] = 'True';
-        setcookie('login',explode('@',$email)[0]);
+        $_SESSION['login'] = explode('@', $email)[0];
         $after = isset($_GET["after"]) ? $_GET["after"] : "";
         return prepare_content($after);
     } else {
@@ -90,9 +91,9 @@ function prepare_client_panel()
 {
     include_once 'logic.php';
     include 'templates/client_panel.php';
-    if (is_session_active()) {
-        $email = isset($_COOKIE['login']) ? $_COOKIE['login']:'Smth went wrong!!'; //WZIĄĆ Z DANYCH SESJI
-        return create_client_panel_content($email);
+    if (is_logged_in()) {
+        $login = isset($_SESSION['login']) ? $_SESSION['login'] : 'Smth went wrong!!';
+        return create_client_panel_content($login);
     } else {
         return prepare_login_content('client_panel');
     }
@@ -102,9 +103,9 @@ function prepare_projects_list_content()
 {
     include_once 'logic.php';
     include 'templates/projects_list.php';
-    if (is_session_active()) {
-        $email = isset($_COOKIE['login']) ? $_COOKIE['login']:'Smth went wrong!!'; //WZIĄĆ Z DANYCH SESJI
-        return create_projects_list_content($email);
+    if (is_logged_in()) {
+        $login = isset($_SESSION['login']) ? $_SESSION['login'] : 'Smth went wrong!!';
+        return create_projects_list_content($login);
     } else {
         return prepare_login_content('app_list');
     }

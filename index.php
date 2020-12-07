@@ -18,10 +18,8 @@ if(session_id() == '')
 <body>
     <?php
     include 'php/inserter.php';
-    insert_header();
     $page_request = isset($_GET["page"]) ? $_GET["page"] : "";
-    insert_content($page_request);
-    insert_footer();
+    print_page($page_request);
     ?>
 </body>
 

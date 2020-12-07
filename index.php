@@ -18,7 +18,6 @@ if(session_id() == '')
 <body>
     <?php
     include 'php/inserter.php';
-    echo session_id();
     insert_header();
     $page_request = isset($_GET["page"]) ? $_GET["page"] : "";
     insert_content($page_request);

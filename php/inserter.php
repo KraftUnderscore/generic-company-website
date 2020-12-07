@@ -42,7 +42,6 @@ function insert_footer()
 
 function insert_main_content()
 {
-    print(session_id());
     include 'templates/main.php';
     echo (create_main_content());
 }
@@ -67,7 +66,7 @@ function insert_after_login_content()
 
     if (is_login_valid($email, $password)) {
         $_SESSION['isAuthorized'] = 'True';
-        setcookie('login',$email);
+        setcookie('login',explode('@',$email)[0]);
         $after = isset($_GET["after"]) ? $_GET["after"] : "";
         insert_content($after);
     } else {

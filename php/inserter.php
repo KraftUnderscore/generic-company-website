@@ -1,5 +1,32 @@
 <?php
 
+function insert_content($page)
+{
+    switch ($page) {
+        case "login":
+            insert_login_content('');
+            break;
+        case "client_panel":
+            insert_client_panel();
+            break;
+        case "login_form":
+            insert_after_login_content();
+            break;
+        case "app_list":
+            insert_projects_list_content();
+            break;
+        case "app":
+            insert_project_form_content();
+            break;
+        case "project_form_summary":
+            insert_project_summary_content();
+            break;
+        default:
+            insert_main_content();
+            break;
+    }
+}
+
 function insert_header()
 {
     include 'templates/header.php';
@@ -18,32 +45,50 @@ function insert_main_content()
     echo (create_main_content());
 }
 
-function insert_login_content()
+function insert_login_content($after)
 {
     include 'templates/login.php';
-    echo (create_login_content());
+    echo (create_login_content($after));
 }
 
 function insert_after_login_content()
 {
-    include 'logic.php';
-
+    include_once 'logic.php';
     $email = isset($_POST["email"]) ? $_POST["email"] : "";
     $password = isset($_POST["password"]) ? $_POST["password"] : "";
 
     if (is_login_valid($email, $password)) {
-        include 'templates/client_panel.php';
-        echo (create_client_panel_content($email));
+        activate_session(); //tutaj rozpocząć sesję
+        $after = isset($_GET["after"]) ? $_GET["after"] : "";
+        insert_content($after);
     } else {
         include 'templates/incorrect_login.php';
         echo (create_incorrect_login_content());
     }
 }
 
+function insert_client_panel()
+{
+    include_once 'logic.php';
+    include 'templates/client_panel.php';
+    if (is_session_active()) {
+        $email = 'TEST'; //WZIĄĆ Z DANYCH SESJI
+        echo (create_client_panel_content($email));
+    } else {
+        echo (insert_login_content('client_panel'));
+    }
+}
+
 function insert_projects_list_content()
 {
+    include_once 'logic.php';
     include 'templates/projects_list.php';
-    echo (create_projects_list_content());
+    if (is_session_active()) {
+        $email = 'TEST'; //WZIĄĆ Z DANYCH SESJI
+        echo (create_projects_list_content($email));
+    } else {
+        echo (insert_login_content('app_list'));
+    }
 }
 
 function insert_project_form_content()
@@ -55,7 +100,7 @@ function insert_project_form_content()
 
 function insert_project_summary_content()
 {
-    include 'logic.php';
+    include_once 'logic.php';
     include 'templates/project_summary.php';
     $project = isset($_POST["app_kind"]) ? $_POST["app_kind"] : "";
     $start_date = $_POST['project_start'];

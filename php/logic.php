@@ -16,6 +16,16 @@ function is_login_valid($email, $password)
     return is_email_valid($email) && is_password_valid($password);
 }
 
+function activate_session()
+{
+
+}
+
+function is_session_active()
+{
+    return true;
+}
+
 function is_date_valid($d_1, $d_2)
 {
     if ($d_1 > $d_2) {

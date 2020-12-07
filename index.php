@@ -13,28 +13,9 @@
 <body>
     <?php
     include 'php/inserter.php';
-    $page_request = isset($_GET["page"]) ? $_GET["page"] : "";
     insert_header();
-    switch ($page_request) {
-        case "login":
-            insert_login_content();
-            break;
-        case "login_form":
-            insert_after_login_content();
-            break;
-        case "app_list":
-            insert_projects_list_content();
-            break;
-        case "app":
-            insert_project_form_content();
-            break;
-        case "project_form_summary":
-            insert_project_summary_content();
-            break;
-        default:
-            insert_main_content();
-            break;
-    }
+    $page_request = isset($_GET["page"]) ? $_GET["page"] : "";
+    insert_content($page_request);
     insert_footer();
     ?>
 </body>

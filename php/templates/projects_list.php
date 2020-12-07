@@ -1,8 +1,9 @@
 <?php
 
-function create_projects_list_content()
+function create_projects_list_content($email)
 {
     return '
+        <h2>Co dzisiaj zamówisz, ' . $email . '?</h2>
         <article class="list_item">
             <a href="index.php?page=app&project=Android">
                 <img src="assets/android-logo.png" alt="android logo" width="30px" height="30px">

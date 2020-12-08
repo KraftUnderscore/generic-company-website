@@ -1,7 +1,12 @@
 <?php
 
-function print_page($page_request)
+function print_page($page_request,$theme_request)
 {
+    
+    include_once 'php/logic.php';
+    if($theme_request == 'change_theme')
+        change_theme();
+
     $content = prepare_content($page_request);
     $header = prepare_header();
     $footer = prepare_footer();

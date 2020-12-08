@@ -36,7 +36,21 @@ function is_date_valid($d_1, $d_2)
         return True;
     }
 }
+function change_theme(){
+    $theme = isset($_COOKIE['theme'])? $_COOKIE['theme']:'sun';
+    if($theme == 'sun')
+        setcookie('theme','moon');
+    else
+        setcookie('theme','sun');
+    redirect();
+}
 
+function redirect(){
+    $page_query = isset($_GET["page"])?"?page=".$_GET["page"] :"";
+    $page_query = ($page_query == "?page=login")? "":$page_query;
+    $project_query = isset($_GET["project"])?"&project=".$_GET["project"] :"";
+    header("Location: /piekarnia".$page_query.$project_query);
+}
 //extend if more form validation is present
 function is_form_valid($d_1, $d_2)
 {

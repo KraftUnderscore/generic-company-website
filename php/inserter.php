@@ -1,10 +1,10 @@
 <?php
 
-function print_page($page_request,$theme_request)
+function print_page($page_request, $theme_request)
 {
-    
+
     include_once 'php/logic.php';
-    if($theme_request == 'change_theme')
+    if ($theme_request == 'change_theme')
         change_theme();
 
     $content = prepare_content($page_request);
@@ -81,10 +81,14 @@ function prepare_after_login_content()
     $email = isset($_POST["email"]) ? $_POST["email"] : "";
     $password = isset($_POST["password"]) ? $_POST["password"] : "";
 
-    if (is_login_valid($email, $password)) {
+    $after = isset($_GET["after"]) ? $_GET["after"] : "";
+    $_GET["page"] = $after;
+
+    if (is_logged_in()) {
+        return prepare_content($after);
+    } elseif (is_login_valid($email, $password)) {
         $_SESSION['isAuthorized'] = 'True';
         $_SESSION['login'] = explode('@', $email)[0];
-        $after = isset($_GET["after"]) ? $_GET["after"] : "";
         return prepare_content($after);
     } else {
         include 'templates/incorrect_login.php';

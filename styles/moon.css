@@ -1,10 +1,10 @@
 body {
-    background-color: #F9D7C8;
+    background-color: #ceac9d;
     color: #202A25;
 }
 
 h1 {
-    background-color: #F7D0A1;
+    background-color: #c7a881;
     margin: 0;
     text-align: center;
     padding-top: 1em;
@@ -20,8 +20,7 @@ h2 {
 .orders {
     margin: 2%;
     padding: 2%;
-    background-color: #F7CBA1;
-    
+    background-color: #d3ac87;
 }
 
 .orders h3 {
@@ -38,7 +37,7 @@ h2 {
 nav {
     list-style-type: none;
     overflow: hidden;
-    background-color: #f2b469;
+    background-color: #ce9a5a;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -46,6 +45,7 @@ nav {
     padding-left: 0;
     width: 100%;
 }
+
 
 nav a {
     float: left;
@@ -56,24 +56,25 @@ nav a {
     text-decoration: none;
 }
 
+
 nav a:last-child{
     margin-left: auto;
 }
 
 nav a:hover {
-    background-color: #EDA063;
+    background-color: #b47b4d;
 }
 
 section {
     margin: 2%;
     padding: 2%;
-    background-color: #F7CBA1;
+    background-color: #c4a07e;
 }
 
 footer {
     margin-top: 2%;
     padding: 2%;
-    background-color: #f2b469;
+    background-color: #ce9a5a;
 }
 
 .comment p {
@@ -95,7 +96,7 @@ footer {
     margin-left: 20%;
     margin-top: 10%;
     margin-right: 20%;
-    background-color: #F7CBA1;
+    background-color: #d3ab85;
     text-align: center;
     border-color: #202A25;
     border-width: 0.1em;
@@ -120,7 +121,7 @@ footer {
 }
 
 .list_item:hover {
-    background-color: #EDA063;
+    background-color: #c5844f;
 }
 
 .list_item a {

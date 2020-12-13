@@ -37,6 +37,12 @@ function prepare_content($page)
         case "project_form_summary":
             return prepare_project_summary_content();
             break;
+        case "register":
+            return prepare_register_content();
+            break;
+        case "after_register":
+            return prepare_after_register_content();
+            break;
         default:
             return prepare_main_content();
             break;
@@ -139,4 +145,27 @@ function prepare_project_summary_content()
     $extras_array = isset($_POST["formExtra"]) ? $_POST["formExtra"] : array();
     $extras = extract_extras($extras_array);
     return create_project_summary_content($project, $start_date, $end_date, $description, $extras, $is_valid);
+}
+
+function prepare_register_content()
+{
+    include 'templates/register.php';
+    return create_register_content();
+}
+
+function prepare_after_register_content()
+{
+    include_once 'logic.php';
+    $email = isset($_POST["email"]) ? $_POST["email"] : "";
+    $password = isset($_POST["password"]) ? $_POST["password"] : "";
+    if(is_email_valid($email) && is_password_valid($password))
+    {
+        include_once 'db_ops/db_connection.php';
+        $login = explode('@', $email)[0];
+        return add_user($email, $login, $password);
+        //return prepare_after_login_content();
+    }
+
+    include 'templates/incorrect_register.php';
+    return create_incorrect_register_content();
 }

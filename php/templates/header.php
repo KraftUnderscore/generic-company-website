@@ -3,7 +3,7 @@
 function create_header($is_logged_in)
 {
     $login_button = $is_logged_in ? '<a href="index.php?page=login">Wyloguj</a>'
-                                  : '<a href="index.php?page=login">Zaloguj</a>';
+                                  : '<a href="index.php?page=login">Zaloguj</a><a href="index.php?page=register>Rejestracja</a>';
     
     $page_query = isset($_GET["page"])?"page=".$_GET["page"] . "&":"";
     $page_query = ($page_query == "page=login")? "" : $page_query;

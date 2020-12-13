@@ -87,7 +87,7 @@ function prepare_after_login_content()
     if (is_logged_in()) {
         return prepare_content($after);
     } elseif (is_login_valid($email, $password)) {
-        $_SESSION['isAuthorized'] = 'True';
+        $_SESSION['isAuthorized'] = True;
         $_SESSION['login'] = explode('@', $email)[0];
         return prepare_content($after);
     } else {

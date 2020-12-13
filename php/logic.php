@@ -13,7 +13,12 @@ function is_password_valid($password)
 //extend when database is ready
 function is_login_valid($email, $password)
 {
-    return is_email_valid($email) && is_password_valid($password);
+    include_once 'db_ops/db_connection.php';
+    $password = hash('sha512', $password);
+    if ($password == get_password($email))
+        return True;
+    else
+        return False;
 }
 
 function activate_session()

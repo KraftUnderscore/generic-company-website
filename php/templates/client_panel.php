@@ -2,7 +2,7 @@
 
 function create_client_panel_content($email)
 {
-    include 'php/db_ops/db_connection.php';
+    include_once 'php/db_ops/db_connection.php';
     $order_array = get_orders($email);
     $orders_html = '';
 

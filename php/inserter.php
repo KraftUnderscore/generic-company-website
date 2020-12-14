@@ -162,8 +162,8 @@ function prepare_after_register_content()
     {
         include_once 'db_ops/db_connection.php';
         $login = explode('@', $email)[0];
-        return add_user($email, $login, $password);
-        //return prepare_after_login_content();
+        add_user($email, $login, $password);
+        return prepare_after_login_content();
     }
 
     include 'templates/incorrect_register.php';

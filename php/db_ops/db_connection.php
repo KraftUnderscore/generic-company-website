@@ -79,9 +79,15 @@ function add_user($email, $login, $password)
         $result = $connection->query('SELECT MAX(id) + 1 FROM users');
         $id = $result->fetch_row()[0];
         $sql = 'INSERT INTO `users` (`id`, `email`, `password`, `login`)
-        VALUES (' . $id . ', ' . $email . ', ' 
-        . hash('sha512', $password) . ', ' . $login . ')';
+        VALUES (' . $id . ', \'' . $email . '\', \'' 
+        . hash('sha512', $password) . '\', \'' . $login . '\')';
         $connection->query($sql);
-        return $sql;
+        include '/../logger.php';
+        console_log($sql);
+        if ($connection->query($sql) === TRUE) {
+            console_log("New record created successfully");
+          } else {
+            console_log("Error: " . $sql . "<br>" . $connection->error);
+          }
     }
 }

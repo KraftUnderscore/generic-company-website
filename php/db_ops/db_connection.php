@@ -101,3 +101,13 @@ function add_user($email, $login, $password)
     }
     return false;
 }
+
+function add_order($login, $app_type, $order_start, $order_end, $description, $order_premium,$status){
+    $connection = get_connetion();
+
+    if ($connection != NULL){
+        $sql = $connection->prepare('INSERT INTO orders ( app_type ,order_start, order_end, description, order_premium_package, status, usersid ) VALUES ( ? ,? ,? ,? ,? ,? ,? )');
+        $sql->bind_param('ssssssi',$app_type, $order_start,$order_end,$description,$order_premium,$status,get_id_from_login($login));
+        $sql->execute();
+    }
+}

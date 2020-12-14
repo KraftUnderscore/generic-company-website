@@ -64,6 +64,7 @@ function is_form_valid($d_1, $d_2)
     return is_date_valid($d_1, $d_2);
 }
 
+
 function extract_extras($extras_array)
 {
     $extras = "";
@@ -73,6 +74,16 @@ function extract_extras($extras_array)
         for ($i = 0; $i < count($extras_array); $i++) {
             $extras .= ("<p>" . $extras_array[$i] . "</p>");
         }
+    }
+    return $extras;
+}
+
+function extras_to_string($extras_array){
+    $extras = "";
+    if (empty($extras_array)) {
+        $extras .= ("");
+    } else {
+        $extras = implode(',', $extras_array);
     }
     return $extras;
 }

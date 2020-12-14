@@ -144,6 +144,11 @@ function prepare_project_summary_content()
     $description = isset($_POST["description"]) ? $_POST["description"] : "";
     $extras_array = isset($_POST["formExtra"]) ? $_POST["formExtra"] : array();
     $extras = extract_extras($extras_array);
+    $status = 'pending';
+    if ($is_valid){
+        include 'db_ops/db_connection.php';
+        add_order($_SESSION['login'],$project, $start_date, $end_date, $description,extras_to_string($extras_array),$status);
+    }
     return create_project_summary_content($project, $start_date, $end_date, $description, $extras, $is_valid);
 }
 

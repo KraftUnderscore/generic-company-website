@@ -81,7 +81,6 @@ function add_user($email, $login, $password)
         $sql = 'INSERT INTO `users` (`id`, `email`, `password`, `login`)
         VALUES (' . $id . ', \'' . $email . '\', \'' 
         . hash('sha512', $password) . '\', \'' . $login . '\')';
-        $connection->query($sql);
         include '/../logger.php';
         console_log($sql);
         if ($connection->query($sql) === TRUE) {

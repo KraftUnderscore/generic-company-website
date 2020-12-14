@@ -38,21 +38,14 @@ nav {
     list-style-type: none;
     overflow: hidden;
     background-color: #ce9a5a;
-<<<<<<< HEAD
-=======
     display: flex;
     flex-direction: row;
->>>>>>> kuba
     width: 100%;
     margin: 0;
     padding-left: 0;
     width: 100%;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> kuba
 nav a {
     float: left;
     display: block;
@@ -62,14 +55,11 @@ nav a {
     text-decoration: none;
 }
 
-<<<<<<< HEAD
-=======
 
 nav a:last-child{
     margin-left: auto;
 }
 
->>>>>>> kuba
 nav a:hover {
     background-color: #b47b4d;
 }

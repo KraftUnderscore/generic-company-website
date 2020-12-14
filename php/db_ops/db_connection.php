@@ -72,6 +72,22 @@ function get_orders($user_login)
     return NULL;
 }
 
+function is_email_in_db($email)
+{
+    $connection = get_connetion();
+    if ($connection != NULL) {
+        $result = $connection->query('SELECT id
+                                      FROM users
+                                      WHERE users.email="' . $email . '"');
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            return $row['id'];
+        }
+        return $result->num_rows > 0;
+    }
+    return false;
+}
+
 function add_user($email, $login, $password)
 {
     $connection = get_connetion();
@@ -79,14 +95,9 @@ function add_user($email, $login, $password)
         $result = $connection->query('SELECT MAX(id) + 1 FROM users');
         $id = $result->fetch_row()[0];
         $sql = 'INSERT INTO `users` (`id`, `email`, `password`, `login`)
-        VALUES (' . $id . ', \'' . $email . '\', \'' 
-        . hash('sha512', $password) . '\', \'' . $login . '\')';
-        include '/../logger.php';
-        console_log($sql);
-        if ($connection->query($sql) === TRUE) {
-            console_log("New record created successfully");
-          } else {
-            console_log("Error: " . $sql . "<br>" . $connection->error);
-          }
+                VALUES (' . $id . ', \'' . $email . '\', \'' 
+                . hash('sha512', $password) . '\', \'' . $login . '\')';
+        return $connection->query($sql) === TRUE;
     }
+    return false;
 }

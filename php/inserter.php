@@ -156,16 +156,20 @@ function prepare_register_content()
 function prepare_after_register_content()
 {
     include_once 'logic.php';
+    include 'templates/incorrect_register.php';
+
     $email = isset($_POST["email"]) ? $_POST["email"] : "";
     $password = isset($_POST["password"]) ? $_POST["password"] : "";
+
     if(is_email_valid($email) && is_password_valid($password))
     {
         include_once 'db_ops/db_connection.php';
+        if(is_email_in_db($email))
+            return create_incorrect_register_content(true);
         $login = explode('@', $email)[0];
-        add_user($email, $login, $password);
-        return prepare_after_login_content();
+        if(add_user($email, $login, $password))
+            return prepare_after_login_content();
     }
 
-    include 'templates/incorrect_register.php';
-    return create_incorrect_register_content();
+    return create_incorrect_register_content(false);
 }

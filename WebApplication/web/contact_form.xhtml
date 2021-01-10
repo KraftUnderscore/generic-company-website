@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Business contact form"/>
+    <meta name="keywords" content="contact, form, help, business"/>
+    <title>Formularz kontaktowy</title>
+
+    <link rel="stylesheet" type="text/css" href="static/styles/forms.css"/>
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+    <script src="scripts/forms.js"></script>
+</head>
+
+<body class="background_repeat">
+    <div class="content">
+        <header>
+            <h1>Formularz kontaktowy</h1>
+        </header>
+        <form id="form" autocomplete="on">
+            <p>
+                <strong>Imię:</strong>
+                <input type="text" id="firstName" autofocus="true"/>
+            </p>
+
+            <p>
+                <strong class="req">Nazwisko:</strong>
+                <input type="text" id="lastName" required="true"/>
+            </p>
+
+            <p>
+                <strong>Miesiąc urodzenia:</strong>
+                <input type="text" id="txtList" placeholder="Wybierz miesiąc" list="months"/>
+                <datalist id="months">
+                    <option value="Styczeń"/>
+                    <option value="Luty"/>
+                    <option value="Marzec"/>
+                    <option value="Kwiecień"/>
+                    <option value="Maj"/>
+                    <option value="Czerwiec"/>
+                    <option value="Lipiec"/>
+                    <option value="Sierpień"/>
+                    <option value="Wrzesień"/>
+                    <option value="Październik"/>
+                    <option value="Listopad"/>
+                    <option value="Grudzień"/>
+                </datalist>
+            </p>
+
+            <p>
+                <strong class="req">Email:</strong> <input type="email" id="email" required="true"/>
+            </p>
+
+            <p>
+                <strong>Telefon:</strong> <input type="tel" id="tel" pattern="\d{3} \d{3} \d{3}"/>
+            </p>
+
+            <p>
+                <strong>Temat:</strong>
+                <select name="topic" required="true">
+                    <option value="" disabled="true" selected="true">Wybierz temat</option>
+                    <optgroup label="Pomoc">
+                        <option value="gen_help">Ogólna</option>
+                        <option value="tech_help">Techniczna</option>
+                    </optgroup>
+                    <optgroup label="Biznes">
+                        <option value="software">Oprogramowanie</option>
+                        <option value="other">Produkty</option>
+                    </optgroup>
+                </select>
+            </p>
+
+            <strong>Jak się do Ciebie odnieść:</strong><br/>
+            <input type="radio" name="gender" value="male" checked="true" required="true"/> Pan<br/>
+            <input type="radio" name="gender" value="female"/> Pani<br/>
+
+            <strong>Twoja wiadomość:</strong><br/>
+            <textarea id="msg" name="message" rows="5" cols="50" maxlength="200" placeholder="Tutaj pisz..."
+                required="true"></textarea><br/>
+
+            <div id="consent">
+                <input id="cons_res" type="checkbox" name="consent" value="respond" required="true"/>
+                <label for="cons_res">
+                    Wyrażam zgodę na kontakt mailowy na podany adres w celu <em>odpowiedzi</em> na moją wiadomość.
+                </label><br/>
+                <input id="cons_mark" type="checkbox" name="consent" value="marketing"/>
+                <label for="cons_mark">
+                    Wyrażam zgodę na kontakt mailowy na podany adres w celach <em>marketingowych</em>.
+                </label>
+            </div>
+
+            <div style="margin-top: 1em;">
+                <input type="reset" value="Wyczyść formularz"/>
+                <input type="submit" value="Wyślij formularz"/>
+            </div>
+
+        </form>
+
+        <footer>
+            <a class="button" href="index.xhtml">Powrót na stronę główną</a>
+        </footer>
+    </div>
+</body>
+
+</html>

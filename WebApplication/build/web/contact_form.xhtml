@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<head>
+<h:head>
     <meta charset="utf-8"/>
     <meta name="description" content="Business contact form"/>
     <meta name="keywords" content="contact, form, help, business"/>
@@ -16,96 +17,78 @@
         }
     </style>
     <script src="scripts/forms.js"></script>
-</head>
+</h:head>
 
-<body class="background_repeat">
+<h:body class="background_repeat">
     <div class="content">
         <header>
             <h1>Formularz kontaktowy</h1>
         </header>
-        <form id="form" autocomplete="on">
+        <h:form id="form">
             <p>
-                <strong>Imię:</strong>
-                <input type="text" id="firstName" autofocus="true"/>
+                <h:outputLabel value="Imię:">
+                    <h:inputText id="firstName"/>
+                </h:outputLabel>
             </p>
 
             <p>
-                <strong class="req">Nazwisko:</strong>
-                <input type="text" id="lastName" required="true"/>
+                <h:outputLabel class="req" value="Nazwisko:">
+                    <h:inputText id="lastName">
+                        <f:validateLength minimum="3" maximum="30" />
+                    </h:inputText>
+                </h:outputLabel>
+                <h:message for="lastName"/>
             </p>
 
             <p>
-                <strong>Miesiąc urodzenia:</strong>
-                <input type="text" id="txtList" placeholder="Wybierz miesiąc" list="months"/>
-                <datalist id="months">
-                    <option value="Styczeń"/>
-                    <option value="Luty"/>
-                    <option value="Marzec"/>
-                    <option value="Kwiecień"/>
-                    <option value="Maj"/>
-                    <option value="Czerwiec"/>
-                    <option value="Lipiec"/>
-                    <option value="Sierpień"/>
-                    <option value="Wrzesień"/>
-                    <option value="Październik"/>
-                    <option value="Listopad"/>
-                    <option value="Grudzień"/>
-                </datalist>
+                <strong class="req"></strong>
+                <h:outputLabel class="req" value="Email:">
+                    <h:inputText id="email">
+                        <f:validateRegex pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"/>
+                    </h:inputText>
+                </h:outputLabel>
+                <h:message for="email"/>
             </p>
 
             <p>
-                <strong class="req">Email:</strong> <input type="email" id="email" required="true"/>
-            </p>
-
-            <p>
-                <strong>Telefon:</strong> <input type="tel" id="tel" pattern="\d{3} \d{3} \d{3}"/>
+                <strong>Telefon:</strong>
+                <h:inputText id="tel">
+                    <f:validateLongRange minimum="100000000" maximum="999999999" />
+                </h:inputText>
+                <h:message for="tel"/>
             </p>
 
             <p>
                 <strong>Temat:</strong>
-                <select name="topic" required="true">
-                    <option value="" disabled="true" selected="true">Wybierz temat</option>
-                    <optgroup label="Pomoc">
-                        <option value="gen_help">Ogólna</option>
-                        <option value="tech_help">Techniczna</option>
-                    </optgroup>
-                    <optgroup label="Biznes">
-                        <option value="software">Oprogramowanie</option>
-                        <option value="other">Produkty</option>
-                    </optgroup>
-                </select>
+                <h:selectOneMenu value="Temat">
+                    <f:selectItem itemValue="gen_help" itemLabel="Pomoc ogólna" />
+                    <f:selectItem itemValue="tech_help" itemLabel="Pomoc techniczna" />
+                    <f:selectItem itemValue="software" itemLabel="Oprogramowanie" />
+                    <f:selectItem itemValue="other" itemLabel="Produkty" />
+                </h:selectOneMenu>
             </p>
 
             <strong>Jak się do Ciebie odnieść:</strong><br/>
-            <input type="radio" name="gender" value="male" checked="true" required="true"/> Pan<br/>
-            <input type="radio" name="gender" value="female"/> Pani<br/>
+            <h:selectOneRadio id="gender" value="Temat">
+                <f:validateRequired/>
+                <f:selectItem itemValue="male" itemLabel="Pan"/>
+                <f:selectItem itemValue="female" itemLabel="Pani" />
+            </h:selectOneRadio>
+            <h:message for="gender"/><br/>
 
             <strong>Twoja wiadomość:</strong><br/>
-            <textarea id="msg" name="message" rows="5" cols="50" maxlength="200" placeholder="Tutaj pisz..."
-                required="true"></textarea><br/>
-
-            <div id="consent">
-                <input id="cons_res" type="checkbox" name="consent" value="respond" required="true"/>
-                <label for="cons_res">
-                    Wyrażam zgodę na kontakt mailowy na podany adres w celu <em>odpowiedzi</em> na moją wiadomość.
-                </label><br/>
-                <input id="cons_mark" type="checkbox" name="consent" value="marketing"/>
-                <label for="cons_mark">
-                    Wyrażam zgodę na kontakt mailowy na podany adres w celach <em>marketingowych</em>.
-                </label>
-            </div>
+            <textarea id="msg" name="message" rows="5" cols="50" maxlength="200" placeholder="Tutaj pisz..."></textarea><br/>
 
             <div style="margin-top: 1em;">
-                <input type="reset" value="Wyczyść formularz"/>
-                <input type="submit" value="Wyślij formularz"/>
+                <h:commandButton value="Wyslij" />
             </div>
 
-        </form>
+        </h:form>
 
         <footer>
             <a class="button" href="index.xhtml">Powrót na stronę główną</a>
         </footer>
     </div>
-</body>
+</h:body>
 
 </html>

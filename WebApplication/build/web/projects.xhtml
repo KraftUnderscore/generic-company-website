@@ -9,7 +9,6 @@
     <meta name="keywords" content="projects, business, software, products"/>
     <title>Projekty</title>
     <link rel="stylesheet" type="text/css" href="static/styles/index_style.css"/>
-    <script value="static/scripts/calculator.js"></script>
 </h:head>
 
 <h:body>
@@ -37,13 +36,8 @@
                     <li><a href="http://www.youtube.com">strona internetowa</a></li>
                 </ul>
             </li>
-            <li class="nav-item"><a href="#">Kalkulator</a>
-                <ul class="nav-child">
-                    <li><a href="#Calculator">lokalna</a></li>
-                </ul>
-            </li>
             <li class="nav-item">
-                <a href="index.xhtml">Powrót</a>
+                <h:link value="Powrót" outcome="index"/>
             </li>
         </ul>
     </nav>
@@ -90,41 +84,10 @@
                 </details>
             </section>
         </li>
-        <li>
-            <section id="Calculator">
-                <h2>Kalkulator</h2>
-
-                <div>
-                    <p>
-                        Ile stron posiada twój projekt?
-                        <input id="pages" type="text" placeholder="(np. 1, 3, 12)"/>
-                        Przewidywany czas pracy:
-                        <span id="workTime">0</span>h
-                    </p>
-                    <p>
-                        Miesięczny dochód twojej firmy (w tysiącach):
-                        <input id="income" type="text" placeholder="(np. 13,5)"/>
-                        Przewidywany koszt:
-                        <span id="monthCost">0</span>zł/msc
-                    </p>
-                    <p>
-                        Przewidywany łączny koszt na dzień
-                        <script>
-                            let today = new Date();
-                            document.write(today.toLocaleDateString());
-                        </script>:
-                        <span id="totalCost">0</span>zł
-                    </p>
-                    <p id="progressBar"></p>
-
-                    <input id="calcButton" type="button" value="PRZELICZ"/>
-                </div>
-            </section>
-        </li>
     </ul>
 
     <footer>
-        <h4><a href="index.xhtml">Powrót na stronę główną</a></h4>
+        <h4><h:link value="Powrót na stronę główną" outcome="index"/></h4>
     </footer>
 </h:body>
 

@@ -31,13 +31,6 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="partners.xhtml">Partnerzy</a>
-                <ul class="nav-child">
-                    <li><a href="#partners">Lokalnie</a></li>
-                    <li><h:link value="Odnośnik" outcome="partners.xhtml"/></li>
-                </ul>
-            </li>
-            <li class="nav-item">
                 <a href="projects.xhtml">Projekty</a>
                 <ul class="nav-child">
                     <li><a href="#projects">Lokalnie</a></li>
@@ -73,25 +66,6 @@
                         przeprowadzania zmian, najlepszych pracowników, a także wysokiej jakości produkty i usługi.
                     </p>
                 </article>
-            </section>
-        </li>
-
-        <li>
-            <section id="partners">
-                <a href="partners.xhtml">
-                    <h4>Partnerzy</h4>
-                </a>
-                <section id="partners_description">
-                    <h5>Ludzie, z którymi uwielbiamy współpracować.</h5>
-
-                    <figure>
-                        <a href="/faces/partners.xhtml">
-                            <h:graphicImage id="partners_pic" value="static/photos/Business-partners-Stock-Photo-02.jpg" width="600"
-                                height="400" alt="partners"/>
-                        </a>
-                        <figcaption>James Smith with our CEO Jane Fonda</figcaption>
-                    </figure>
-                </section>
             </section>
         </li>
 
@@ -137,9 +111,7 @@
                 <footer>
                     <h4>Kontakt</h4>
                     <p>
-                        <a href="faces/contact_form.xhtml">
-                            Formularz kontaktowy
-                        </a>
+                        <h:link value="Formularz kontaktowy" outcome="contact_form"/>
                     </p>
                     <p>West Gate, Lotnicza 12, 54-155 Wrocław</p>
                     <p><a href="static/resources/business_card.pdf" download="business_card">Wizytówka</a></p>

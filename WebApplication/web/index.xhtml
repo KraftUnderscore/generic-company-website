@@ -8,8 +8,8 @@
     <meta name="description" content="Business co. website"/>
     <meta name="keywords" content="business, philantropy"/>
     <title>Biznes</title>
-    <link rel="stylesheet" type="text/css" href="static/styles/index_style.css"/>
-    <script src="static/scripts/index.js"></script>
+    <h:outputStylesheet library="css" name="index_style.css"/>
+    <script src="resources/scripts/index.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
@@ -78,7 +78,7 @@
 
                     <figure>
                         <h:link outcome="projects.xhtml">
-                            <h:graphicImage value="static/photos/projects.jpg" width="600" height="400" alt="projects"/>
+                            <h:graphicImage library="photos" name="projects.jpg" width="600" height="400" alt="projects"/>
                         </h:link>                        
                         <figcaption>Photo by <em>Alamy Stock Photos</em></figcaption>
                     </figure>
@@ -95,7 +95,7 @@
 
                     <figure>
                         <h:link outcome="filantropia.xhtml">
-                            <h:graphicImage value="static/photos/filantropia.jpg" width="600" height="400" alt="philanthropy"/>
+                            <h:graphicImage library="photos" name="filantropia.jpg" width="600" height="400" alt="philanthropy"/>
                         </h:link>
                         <figcaption>Photo by<em>Alamy Stock Photos</em></figcaption>
                     </figure>
@@ -111,7 +111,7 @@
                         <h:link value="Formularz kontaktowy" outcome="contact_form"/>
                     </p>
                     <p>West Gate, Lotnicza 12, 54-155 Wrocław</p>
-                    <p><a href="static/resources/business_card.pdf" download="business_card">Wizytówka</a></p>
+                    <p><a href="resources/resources/business_card.pdf" download="business_card">Wizytówka</a></p>
                     <a href="mailto:company@business.com">Firma &amp; Biznes</a>
                 </footer>
             </section>

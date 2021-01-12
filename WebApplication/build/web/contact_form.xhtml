@@ -4,20 +4,19 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<head>
+<h:head>
     <meta charset="utf-8"/>
     <meta name="description" content="Business contact form"/>
     <meta name="keywords" content="contact, form, help, business"/>
     <title>Formularz kontaktowy</title>
-
-    <link rel="stylesheet" type="text/css" href="static/styles/forms.css"/>
-    <style>
+<style>
         textarea {
             resize: none;
         }
     </style>
-    <script src="scripts/forms.js"></script>
-</head>
+    <h:outputStylesheet library="css" name="forms.css"/>
+    <h:outputScript library="scripts" name="forms.js"/>
+</h:head>
 
 <h:body class="background_repeat">
     <header>

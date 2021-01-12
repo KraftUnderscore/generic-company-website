@@ -4,7 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<h:head>
+<head>
     <meta charset="utf-8"/>
     <meta name="description" content="Business contact form"/>
     <meta name="keywords" content="contact, form, help, business"/>
@@ -17,23 +17,24 @@
         }
     </style>
     <script src="scripts/forms.js"></script>
-</h:head>
+</head>
 
 <h:body class="background_repeat">
-    <div class="content">
         <header>
             <h1>Formularz kontaktowy</h1>
         </header>
-        <h:form id="form">
+        
+    
+    <h:form id="form">
             <p>
                 <h:outputLabel value="Imię:">
-                    <h:inputText id="firstName"/>
+                    <h:inputText id="firstName" value="#{formBean.name}"/>
                 </h:outputLabel>
             </p>
 
             <p>
                 <h:outputLabel class="req" value="Nazwisko:">
-                    <h:inputText id="lastName">
+                    <h:inputText id="lastName" value="#{formBean.surname}">
                         <f:validateLength minimum="3" maximum="30" />
                     </h:inputText>
                 </h:outputLabel>
@@ -43,7 +44,7 @@
             <p>
                 <strong class="req"></strong>
                 <h:outputLabel class="req" value="Email:">
-                    <h:inputText id="email">
+                    <h:inputText id="email" value="#{formBean.email}">
                         <f:validateRegex pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"/>
                     </h:inputText>
                 </h:outputLabel>
@@ -52,7 +53,7 @@
 
             <p>
                 <strong>Telefon:</strong>
-                <h:inputText id="tel">
+                <h:inputText id="tel" value="#{formBean.phone}">
                     <f:validateLongRange minimum="100000000" maximum="999999999" />
                 </h:inputText>
                 <h:message for="tel"/>
@@ -60,7 +61,7 @@
 
             <p>
                 <strong>Temat:</strong>
-                <h:selectOneMenu value="Temat">
+                <h:selectOneMenu value="#{formBean.subject}">
                     <f:selectItem itemValue="gen_help" itemLabel="Pomoc ogólna" />
                     <f:selectItem itemValue="tech_help" itemLabel="Pomoc techniczna" />
                     <f:selectItem itemValue="software" itemLabel="Oprogramowanie" />
@@ -69,7 +70,7 @@
             </p>
 
             <strong>Jak się do Ciebie odnieść:</strong><br/>
-            <h:selectOneRadio id="gender" value="Temat">
+            <h:selectOneRadio id="gender" value="#{formBean.gender}">
                 <f:validateRequired/>
                 <f:selectItem itemValue="male" itemLabel="Pan"/>
                 <f:selectItem itemValue="female" itemLabel="Pani" />
@@ -77,18 +78,33 @@
             <h:message for="gender"/><br/>
 
             <strong>Twoja wiadomość:</strong><br/>
-            <textarea id="msg" name="message" rows="5" cols="50" maxlength="200" placeholder="Tutaj pisz..."></textarea><br/>
+            <textarea id="msg"  name="message" rows="5" cols="50" maxlength="200" placeholder="Tutaj pisz..."></textarea><br/>
 
             <div style="margin-top: 1em;">
-                <h:commandButton value="Wyslij" />
+                <h:commandButton action="contact_form" value="Wyslij" />
             </div>
 
         </h:form>
+    <h:outputLabel value="Imie: " for="output_name"/>
+    <h:outputText value="#{formBean.name}" id="output_name"/>
+    <br/>
+    <h:outputLabel value="Nazwisko: " for="output_surname"/>
+    <h:outputText value="#{formBean.surname}" id="output_surname"/>
+    <br/>
+    <h:outputLabel value="Email: " for="output_mail"/>
+    <h:outputText value="#{formBean.email}" id="output_mail"/>
+    <br/>
+    <h:outputLabel value="Telefon: " for="output_phone"/>
+    <h:outputText value="#{formBean.phone}" id="output_phone"/>
+    <br/>
+    <h:outputLabel value="Płeć: " for="output_gender"/>
+    <h:outputText value="#{formBean.gender}" id="output_gender"/>
+    <br/>
+    <h:outputLabel value="Temat: " for="output_subject"/>
+    <h:outputText value="#{formBean.subject}" id="output_subject"/>
+    
 
-        <footer>
-            <a class="button" href="index.xhtml">Powrót na stronę główną</a>
-        </footer>
-    </div>
+       
 </h:body>
 
 </html>

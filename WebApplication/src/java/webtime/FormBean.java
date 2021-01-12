@@ -3,10 +3,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class FormBean implements Serializable {
 
 	private static final long serialVersionUID = 1715935052239888761L;

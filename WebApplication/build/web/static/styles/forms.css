@@ -157,7 +157,15 @@ form {
       padding-left: 10%;
       padding-right: 10%;
       margin: 0 auto;
-      color: #2d3436;
+}
+
+.body_bg {
+    background-color: #fff9fb;
+    width: 75%;
+    margin: auto;
+    padding-bottom: 2.5%;
+    padding-top: 2.5%;
+    padding-left: 2.5%;
 }
 
 *:empty {

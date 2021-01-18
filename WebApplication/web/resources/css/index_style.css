@@ -181,3 +181,17 @@ figure:active:not(#partners-table) {
     padding: 0;
     font-size: medium;
 }
+
+.rows td {
+    display: block;
+    width: 100%;
+}
+
+.body_bg {
+    background-color: #fff9fb;
+    width: 75%;
+    margin: auto;
+    padding-bottom: 2.5%;
+    padding-top: 2.5%;
+    padding-left: 2.5%;
+}

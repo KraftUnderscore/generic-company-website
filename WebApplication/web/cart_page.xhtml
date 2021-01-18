@@ -67,6 +67,7 @@
         </c:forEach>
         <h:commandButton value="Dodaj do koszyka" action="#{cartBean.setCartProducts(catalogBean.filteredProducts)}" />
     </h:form>-->
+        <h:outputLabel>#{cartBean.cartProducts.size()}</h:outputLabel>
 
     <footer>
         <h4><h:link value="Powrót na stronę główną" outcome="index"/></h4>

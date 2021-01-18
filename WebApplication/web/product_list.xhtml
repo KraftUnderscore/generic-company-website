@@ -24,6 +24,7 @@
     <h:form>
         <strong>Kategoria:</strong>
         <h:selectOneRadio value="#{catalogBean.selectedCategory}" required="true">
+            <f:selectItem itemValue="cat_all" itemLabel="Wszystko" />
             <f:selectItem itemValue="cat_software" itemLabel="Oprogramowanie" />
             <f:selectItem itemValue="cat_services" itemLabel="Usługi" />
             <f:selectItem itemValue="cat_products" itemLabel="Produkty" />

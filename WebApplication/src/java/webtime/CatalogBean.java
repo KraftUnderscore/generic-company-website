@@ -5,13 +5,13 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class CatalogBean implements Serializable {
     
-    private String selectedCategory;
+    private String selectedCategory = "cat_all";
     private List<ProductBean> products;
 
     private List<ProductBean> filteredProducts;
@@ -42,6 +42,7 @@ public class CatalogBean implements Serializable {
         products.add(new ProductBean("Ścierka do monitora", "cat_products", 9.99f));
         products.add(new ProductBean("Sprężone powietrze", "cat_products", 19.99f));
         
+        filteredProducts = products;
     }
 
     public void addSelected() {
@@ -75,6 +76,10 @@ public class CatalogBean implements Serializable {
     }
     
     public void filter() {
+        if(selectedCategory.equals("cat_all")) {
+            filteredProducts = products;
+            return;
+        }
         filteredProducts = new ArrayList<>();
         
         products.stream().filter(product -> (product.category.equals(selectedCategory))).forEachOrdered(product -> {

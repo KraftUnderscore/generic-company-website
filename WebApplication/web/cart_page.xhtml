@@ -44,7 +44,7 @@
             </li>
         </ul>
     </nav>
-
+<!--
     <h:form>
         <strong>Kategoria:</strong>
         <h:selectOneRadio value="#{catalogBean.selectedCategory}" required="true">
@@ -55,21 +55,18 @@
         </h:selectOneRadio>
         <h:commandButton value="Filtruj" action="#{catalogBean.filter()}" />
     </h:form>
-       
+    
+    <h:outputLabel>#{catalogBean.selectedCategory}</h:outputLabel>
+   
     <h:form>
         <strong>Produkty:</strong>
-        <h:selectManyCheckbox id="list_items">
-            <c:forEach var="product" items="${catalogBean.filteredProducts}">
-                <f:selectItem itemValue="#{product.name}" itemLabel="#{product.name} cena: #{product.price}" />
-            </c:forEach>
-        </h:selectManyCheckbox >
+        <c:forEach var="product" items="${catalogBean.filteredProducts}">
+            <h:selectManyCheckbox >
+                    <f:selectItem itemValue="#{product.name} cena: #{product.price}" />
+            </h:selectManyCheckbox >
+        </c:forEach>
         <h:commandButton value="Dodaj do koszyka" action="#{cartBean.setCartProducts(catalogBean.filteredProducts)}" />
-    </h:form>
-
-    <div>
-        Produkty w koszyku:
-        <h:outputLabel>#{cartBean.cartProducts.size()}</h:outputLabel>
-    </div>
+    </h:form>-->
 
     <footer>
         <h4><h:link value="Powrót na stronę główną" outcome="index"/></h4>

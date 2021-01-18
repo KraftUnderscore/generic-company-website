@@ -53,19 +53,23 @@
             <f:selectItem itemValue="cat_products" itemLabel="Produkty" />
             <f:selectItem itemValue="cat_devices" itemLabel="Sprzęty" />
         </h:selectOneRadio>
-        <h:commandButton value="submit" action="#{catalogBean.filter()}" />
+        <h:commandButton value="Filtruj" action="#{catalogBean.filter()}" />
     </h:form>
-    
-    <h:outputLabel>#{catalogBean.selectedCategory}</h:outputLabel>
-    
+       
     <h:form>
         <strong>Produkty:</strong>
-        <h:selectManyCheckbox >
-            <c:forEach var="product" items="${catalogBean.products}">
-                    <f:selectItem itemValue="#{product.name}" itemLabel="#{product.name}" />
+        <h:selectManyCheckbox id="list_items">
+            <c:forEach var="product" items="${catalogBean.filteredProducts}">
+                <f:selectItem itemValue="#{product.name}" itemLabel="#{product.name} cena: #{product.price}" />
             </c:forEach>
         </h:selectManyCheckbox >
+        <h:commandButton value="Dodaj do koszyka" action="#{cartBean.setCartProducts(catalogBean.filteredProducts)}" />
     </h:form>
+
+    <div>
+        Produkty w koszyku:
+        <h:outputLabel>#{cartBean.cartProducts.size()}</h:outputLabel>
+    </div>
 
     <footer>
         <h4><h:link value="Powrót na stronę główną" outcome="index"/></h4>

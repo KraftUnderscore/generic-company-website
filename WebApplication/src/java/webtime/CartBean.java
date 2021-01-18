@@ -19,4 +19,17 @@ public class CartBean implements Serializable{
     public void setCartProducts(List<ProductBean> cartProducts) {
         this.cartProducts = cartProducts;
     }    
+    
+    public boolean containsProduct(ProductBean product) {
+        return cartProducts.stream().anyMatch(prod -> (prod.name.equals(product.name)));
+    }
+    
+    public void removeProduct(ProductBean product) {
+        for(ProductBean prod : cartProducts) {
+            if(prod.name.equals(product.name)) {
+                cartProducts.remove(prod);
+                break;
+            }
+        }
+    }
 }

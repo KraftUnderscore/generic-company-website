@@ -9,7 +9,7 @@
     <meta charset="utf-8"/>
     <meta name="description" content="Business projects"/>
     <meta name="keywords" content="projects, business, software, products"/>
-    <title>Projekty</title>
+    <title>Katalog produktów</title>
     <h:outputStylesheet library="css" name="index_style.css"/>
 </h:head>
 
@@ -37,7 +37,7 @@
         <strong>Produkty</strong>
         <h:selectManyCheckbox styleClass="rows" value="#{catalogBean.selectedProducts}" layout="spread">
             <f:selectItems value="#{catalogBean.filteredProducts}" var="p"
-                           itemLabel="Nazwa: #{p.name} Cena: #{p.price}" itemValue="#{p.name}"/>
+                           itemLabel="Nazwa: #{p.name} Cena: #{p.price}" itemValue="#{p}"/>
         </h:selectManyCheckbox>
         <h:commandButton value="Dodaj do koszyka" action="#{catalogBean.addSelected()}" />
         <h:commandButton value="Usuń z koszyka" action="#{catalogBean.removeSelected()}" />

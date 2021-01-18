@@ -31,6 +31,13 @@
                 </ul>
             </li>
             <li class="nav-item">
+                <a href="product_list.xhtml">Nasz sklep</a>
+                <ul class="nav-child">
+                    <li><a href="#shop">Lokalnie</a></li>
+                    <li><h:link value="Odnośnik" outcome="product_list.xhtml"/></li>
+                </ul>
+            </li>
+            <li class="nav-item">
                 <a href="projects.xhtml">Projekty</a>
                 <ul class="nav-child">
                     <li><a href="#projects">Lokalnie</a></li>
@@ -68,7 +75,18 @@
                 </article>
             </section>
         </li>
+        <li>
+            <section id="shop">
+                <article>
+                    <h4>Nasz sklep</h4>
 
+                    <p>
+                        Zapraszamy serdecznie do przeglądania naszego katalogu produktów! :)
+                    </p>
+                    <h:link value="Katalog produktów" outcome="product_list.xhtml" />
+                </article>
+            </section>
+        </li>
         <li>
             <section id="projects">
                 <h4><h:link value="Projekty" outcome="projects.xhtml"/></h4>

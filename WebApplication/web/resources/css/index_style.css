@@ -33,8 +33,7 @@ header {
     font-size: 20pt;
     background-image: radial-gradient(#55efc4, #fdcb6e);
     text-align: center;
-    animation-name: font_size_change;
-    animation-duration: 3s;
+
 }
 
 section {

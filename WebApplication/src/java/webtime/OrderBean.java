@@ -135,6 +135,9 @@ public class OrderBean implements Serializable {
     }
     
     public String actionString(){
+        this.chosenPayment = null;
+        this.chosenShipment = null;
+        this.shipment_name = null;
         this.cart.wipeCart();
         return "/index.xhtml";
     }

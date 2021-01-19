@@ -195,3 +195,16 @@ figure:active:not(#partners-table) {
     padding-top: 2.5%;
     padding-left: 2.5%;
 }
+
+.cart_product_list{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    align-items: center;
+}
+
+.whole_blob{
+    background-color: #FFFFF2;
+}

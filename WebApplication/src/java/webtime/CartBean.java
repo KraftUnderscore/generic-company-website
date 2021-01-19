@@ -32,4 +32,18 @@ public class CartBean implements Serializable{
             }
         }
     }
+    
+    public float getPrice(){
+        if (cartProducts.isEmpty())
+                return 0;
+        else{
+            float price = 0;
+            price = cartProducts.stream().map(p -> p.getPrice()).reduce(price, (accumulator, _item) -> accumulator + _item);
+            return price;
+        }
+    }
+    
+    public void wipeCart(){
+        cartProducts.clear();
+    }
 }

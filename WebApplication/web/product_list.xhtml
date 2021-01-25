@@ -13,7 +13,6 @@
     <h:outputStylesheet library="css" name="index_style.css"/>
 </h:head>
 
-
 <h:body>
     <header>
         <h1>Katalog produktów</h1>
@@ -21,37 +20,38 @@
     
     <div class="body_bg">
 
-    <h:form>
-        <strong>Kategoria:</strong>
-        <h:selectOneRadio value="#{catalogBean.selectedCategory}" required="true">
-            <f:selectItem itemValue="cat_all" itemLabel="Wszystko" />
-            <f:selectItem itemValue="cat_software" itemLabel="Oprogramowanie" />
-            <f:selectItem itemValue="cat_services" itemLabel="Usługi" />
-            <f:selectItem itemValue="cat_products" itemLabel="Produkty" />
-            <f:selectItem itemValue="cat_devices" itemLabel="Sprzęty" />
-        </h:selectOneRadio>
-        <h:commandButton value="Filtruj" action="#{catalogBean.filter()}" />
-    </h:form>
+        <h:form>
+            <strong>Kategoria:</strong>
+            <h:selectOneRadio value="#{catalogBean.selectedCategory}" required="true">
+                <f:selectItem itemValue="cat_all" itemLabel="Wszystko" />
+                <f:selectItem itemValue="cat_software" itemLabel="Oprogramowanie" />
+                <f:selectItem itemValue="cat_services" itemLabel="Usługi" />
+                <f:selectItem itemValue="cat_products" itemLabel="Produkty" />
+                <f:selectItem itemValue="cat_devices" itemLabel="Sprzęty" />
+            </h:selectOneRadio>
+            <h:commandButton value="Filtruj" action="#{catalogBean.filter()}" />
+        </h:form>
 
-    <h:form>
-        <strong>Produkty</strong>
-        <h:selectManyCheckbox styleClass="rows" value="#{catalogBean.selectedProducts}" layout="spread">
-            <f:selectItems value="#{catalogBean.filteredProducts}" var="p"
-                           itemLabel="Nazwa: #{p.name} Cena: #{p.price}" itemValue="#{p}"/>
-        </h:selectManyCheckbox>
-        <h:commandButton value="Dodaj do koszyka" action="#{catalogBean.addSelected()}" />
-        <h:commandButton value="Usuń z koszyka" action="#{catalogBean.removeSelected()}" />
-    </h:form>
+        <h:form>
+            <strong>Produkty</strong>
+            <h:selectManyCheckbox styleClass="rows" value="#{catalogBean.selectedProducts}" layout="spread">
+                <f:selectItems value="#{catalogBean.filteredProducts}" var="p"
+                               itemLabel="Nazwa: #{p.name} Cena: #{p.price}" itemValue="#{p}"/>
+            </h:selectManyCheckbox>
+            <h:commandButton value="Dodaj do koszyka" action="#{catalogBean.addSelected()}" />
+            <h:commandButton value="Usuń z koszyka" action="#{catalogBean.removeSelected()}" />
+        </h:form>
 
-    <div>
-        Produkty w koszyku:
-        <h:outputLabel>#{cartBean.cartProducts.size()}</h:outputLabel>
-    </div>
+        <div>
+            Produkty w koszyku:
+            <h:outputLabel>#{cartBean.cartProducts.size()}</h:outputLabel>
+        </div>
+
         <h4><h:link value="Przejdź do koszyka" outcome="cart_page"/></h4>
 
-    <footer>
-        <h4><h:link value="Powrót na stronę główną" outcome="index"/></h4>
-    </footer>
+        <footer>
+            <h4><h:link value="Powrót na stronę główną" outcome="index"/></h4>
+        </footer>
     </div>
 </h:body>
 

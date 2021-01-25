@@ -1,21 +1,18 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-
-<h:head>
-    <meta charset="utf-8"/>
-    <meta name="description" content="Business projects"/>
-    <meta name="keywords" content="projects, business, software, products"/>
-    <title>Projekty</title>
-    <h:outputStylesheet library="css" name="index_style.css"/>
-</h:head>
-
-<h:body>
+<ui:composition template="/WEB-INF/template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:define name="title">Projekty</ui:define>
+    
+    <ui:define name="header">
     <header>
         <h1>Nasze projekty</h1>
     </header>
+    </ui:define>
 
+    <ui:define name="nav-menu">
     <nav class="navbar">
 
         <ul class="navbar-nav">
@@ -41,6 +38,9 @@
             </li>
         </ul>
     </nav>
+    </ui:define>
+    
+    <ui:define name="content">
 
     <ul>
         <li>
@@ -85,10 +85,13 @@
             </section>
         </li>
     </ul>
+    </ui:define>
+    
+    <ui:define name="footer">
 
     <footer>
         <h4><h:link value="Powrót na stronę główną" outcome="index"/></h4>
     </footer>
-</h:body>
-
-</html>
+    </ui:define>
+    
+</ui:composition>

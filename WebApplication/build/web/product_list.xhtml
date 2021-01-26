@@ -1,22 +1,18 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<ui:composition template="/WEB-INF/template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     
-<h:head>
-    <meta charset="utf-8"/>
-    <meta name="description" content="Business projects"/>
-    <meta name="keywords" content="projects, business, software, products"/>
-    <title>Katalog produktów</title>
-    <h:outputStylesheet library="css" name="index_style.css"/>
-</h:head>
-
-<h:body>
+    <ui:define name="title">Katalog produktów</ui:define>
+    
+    <ui:define name="header">
     <header>
         <h1>Katalog produktów</h1>
     </header>
+    </ui:define>
+    
+    <ui:define name="content">
     
     <div class="body_bg">
 
@@ -49,11 +45,15 @@
 
         <h4><h:link value="Przejdź do koszyka" outcome="cart_page"/></h4>
 
+
+    </div>
+    </ui:define>
+    
+    <ui:define name="footer">
+
         <footer>
             <h4><h:link value="Powrót na stronę główną" outcome="index"/></h4>
         </footer>
-    </div>
-</h:body>
-
-</html>
-
+    </ui:define>
+    
+</ui:composition>

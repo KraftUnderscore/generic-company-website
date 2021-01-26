@@ -1,8 +1,5 @@
 window.onload = function () {
     window.addEventListener("mousemove", getCursorXY, false);
-    var answer = prompt("Chciałbyś się z nami skontaktować?", "Nie");
-    if (answer !== "Tak")
-        removeContactInfo()
 
     window.addEventListener("scroll", movePicture, false)
 
@@ -138,10 +135,4 @@ function scaleYValue(value) {
     max_value = 255
     scaled_value = max_value * value / max_real_value
     return Math.trunc(scaled_value);
-}
-
-
-function removeContactInfo() {
-    contact_info = document.getElementById('contact');
-    contact_info.innerHTML = "";
 }

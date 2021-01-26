@@ -1,6 +1,5 @@
 window.onload = function () {
     window.addEventListener("mousemove", getCursorXY, false);
-
     window.addEventListener("scroll", movePicture, false)
 
     document.getElementById("title_name").addEventListener("click", insertIfNecessary, false)

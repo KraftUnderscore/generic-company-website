@@ -1,162 +1,162 @@
 header {
-      background-color: #e17055;
-      text-align: center;
-      font-size: large;
-      font-variant: small-caps;
+    background-color: #e17055;
+    text-align: center;
+    font-size: large;
+    font-variant: small-caps;
 }
 
 @media screen and (min-width: 500px) {
-      .background_repeat_y {
-            background-image: url("#{resource['photos/biznes_logo.jpg']}"),url("#{resource['photos/background_beautiful.jfif']}");
-            background-repeat: no-repeat, repeat-y;
-            background-position: bottom right, center;
-            background-size: 10% 10%, 100% 80%;
-      }
+    .background_repeat_y {
+        background-image: url("#{resource['photos/biznes_logo.jpg']}"),url("#{resource['photos/background_beautiful.jfif']}");
+        background-repeat: no-repeat, repeat-y;
+        background-position: bottom right, center;
+        background-size: 10% 10%, 100% 80%;
+    }
 }
 
 @media screen and (min-width: 1000px) {
-      .background_repeat_y {
-            background-image: url("#{resource['photos/biznes_logo.jpg']}"),url("#{resource['photos/background_beautiful.jfif']}");
-            background-repeat: no-repeat, no-repeat;
-            background-position: bottom right, center;
-            background-size: 10% 10%, 100% 100%;
-      }
+    .background_repeat_y {
+        background-image: url("#{resource['photos/biznes_logo.jpg']}"),url("#{resource['photos/background_beautiful.jfif']}");
+        background-repeat: no-repeat, no-repeat;
+        background-position: bottom right, center;
+        background-size: 10% 10%, 100% 100%;
+    }
 }
 
 @media print {
-      body {
-            padding-top: 25%;
-      }
+    body {
+        padding-top: 25%;
+    }
 }
 
 @font-face {
-      font-family: "SyneTactile";
-      src: url("../fonts/SyneTactile-Regular.ttf");
+    font-family: "SyneTactile";
+    src: url("../fonts/SyneTactile-Regular.ttf");
 }
 
 .background_repeat {
-      background-image: url("#{resource['photos/biznes_logo.jpg']}"), url("#{resource['photos/backgroud_text.png']}");
-      background-repeat: no-repeat, repeat;
-      background-position: bottom right, center;
-      background-origin: content-box, border-box;
-      background-size: 10% 10%, auto;
+    background-image: url("#{resource['photos/biznes_logo.jpg']}"), url("#{resource['photos/backgroud_text.png']}");
+    background-repeat: no-repeat, repeat;
+    background-position: bottom right, center;
+    background-origin: content-box, border-box;
+    background-size: 10% 10%, auto;
 }
 
 body {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      color: #2d3436;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #2d3436;
 }
 
 h1 {
-      text-shadow: 2pt 2pt 1pt #e0d786;
+    text-shadow: 2pt 2pt 1pt #e0d786;
 }
 
 em {
-      color: #e17055;
-      font-weight: bolder;
+    color: #e17055;
+    font-weight: bolder;
 }
 
 #consent {
-      line-height: 130%;
-      font-size: small;
-      border-color: #ff7675;
-      border-style: solid;
-      border-radius: 1.25em;
-      padding: 0.5em;
+    line-height: 130%;
+    font-size: small;
+    border-color: #ff7675;
+    border-style: solid;
+    border-radius: 1.25em;
+    padding: 0.5em;
 }
 
 .req {
-      text-decoration: underline;
-      line-height: 50%;
-      font-weight: bolder;
-      color: #ff7675
+    text-decoration: underline;
+    line-height: 50%;
+    font-weight: bolder;
+    color: #ff7675
 }
 
 option:disabled {
-      color: #dfe6e9;
+    color: #dfe6e9;
 }
 
 optgroup option:checked {
-      color: #fab1a0;
+    color: #fab1a0;
 }
 
 input:focus {
-      background-color: rgba(199, 245, 245, 0.5);
+    background-color: rgba(199, 245, 245, 0.5);
 }
 
 input:required:focus {
-      background-color: rgba(250, 176, 160, 0.25);
+    background-color: rgba(250, 176, 160, 0.25);
 }
 
 .button {
-      padding: 0.5em;
-      text-decoration: none;
-      color: black;
-      background-color: #e17055;
-      border-width: thin;
-      border-style: groove;
-      border-radius: 0.5em;
+    padding: 0.5em;
+    text-decoration: none;
+    color: black;
+    background-color: #e17055;
+    border-width: thin;
+    border-style: groove;
+    border-radius: 0.5em;
 }
 
 .button:hover {
-      text-decoration: underline;
-      box-shadow: 0.1em 0.1em 0.1em hsla(360, 67%, 51%);
-      animation-duration: 0.125s;
-      animation-name: btn_gradient;
+    text-decoration: underline;
+    box-shadow: 0.1em 0.1em 0.1em hsla(360, 67%, 51%);
+    animation-duration: 0.125s;
+    animation-name: btn_gradient;
 }
 
 @keyframes btn_gradient {
-      from {
-            background: linear-gradient(0.25turn, #e0d786, #e17055, #e17055, #e17055, #e17055);
-      }
-      25% {
-            background: linear-gradient(0.25turn, #e17055, #e0d786, #e17055, #e17055, #e17055);
-      }
-      50% {
-            background: linear-gradient(0.25turn, #e17055, #e17055, #e0d786, #e17055, #e17055);
-      }
-      75% {
-            background: linear-gradient(0.25turn, #e17055, #e17055, #e17055, #e0d786, #e17055);
-      }
-      to {
-            background: linear-gradient(0.25turn, #e17055, #e17055, #e17055, #e17055, #e0d786);
-      }
+    from {
+        background: linear-gradient(0.25turn, #e0d786, #e17055, #e17055, #e17055, #e17055);
+    }
+    25% {
+        background: linear-gradient(0.25turn, #e17055, #e0d786, #e17055, #e17055, #e17055);
+    }
+    50% {
+        background: linear-gradient(0.25turn, #e17055, #e17055, #e0d786, #e17055, #e17055);
+    }
+    75% {
+        background: linear-gradient(0.25turn, #e17055, #e17055, #e17055, #e0d786, #e17055);
+    }
+    to {
+        background: linear-gradient(0.25turn, #e17055, #e17055, #e17055, #e17055, #e0d786);
+    }
 }
 
 footer {
-      margin: 1em;
-      padding: 1em;
-      padding-left: 20%;
-      border-style: solid;
-      border-image-source: url("#{resource['photos/fancy_border.png']}");
-      border-width: 1em;
-      border-image-slice: 27;
-      border-image-repeat: round;
+    margin: 1em;
+    padding: 1em;
+    padding-left: 20%;
+    border-style: solid;
+    border-image-source: url("#{resource['photos/fancy_border.png']}");
+    border-width: 1em;
+    border-image-slice: 27;
+    border-image-repeat: round;
 }
 
 .fill_hint {
-      font-size: small;
-      font-style: italic;
-      color: #b2bec3;
-      position: relative;
+    font-size: small;
+    font-style: italic;
+    color: #b2bec3;
+    position: relative;
 }
 
 .content {
-      background-color: #fff9fb;
-      width: 75%;
-      margin: auto;
-      padding-bottom: 2.5%;
+    background-color: #fff9fb;
+    width: 75%;
+    margin: auto;
+    padding-bottom: 2.5%;
 }
 
 textarea {
-      font-family: 'SyneTactile', sans-serif;
-      resize: none;
+    font-family: 'SyneTactile', sans-serif;
+    resize: none;
 }
 
 form {
-      padding-left: 10%;
-      padding-right: 10%;
-      margin: 0 auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: 0 auto;
 }
 
 .body_bg {
@@ -169,5 +169,5 @@ form {
 }
 
 *:empty {
-      background-color: #f4f6f7;
+    background-color: #f4f6f7;
 }

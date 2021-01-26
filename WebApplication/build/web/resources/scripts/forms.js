@@ -10,24 +10,24 @@ var lastLowerNode;
 function addListenerToObject(id) {
     let node = document.getElementById(id);
     node.addEventListener("focus",
-        function () {
-            lastUpperNode = document.createElement("p");
-            lastUpperNode.innerHTML = "+-+-+-+-+-+-+-+-+-+-+";
-            hint = document.createElement("p");
-            hint.classList.add('fill_hint');
-            hint.innerHTML = chooseHintText(id);
-            lastUpperNode.appendChild(hint);
-            lastLowerNode = document.createElement("p");
-            lastLowerNode.innerHTML = "-+-+-+-+-+-+-+-+-+-+-";
-            node.parentNode.insertBefore(lastUpperNode, node);
-            node.parentNode.appendChild(lastLowerNode, node);
-        })
+            function () {
+                lastUpperNode = document.createElement("p");
+                lastUpperNode.innerHTML = "+-+-+-+-+-+-+-+-+-+-+";
+                hint = document.createElement("p");
+                hint.classList.add('fill_hint');
+                hint.innerHTML = chooseHintText(id);
+                lastUpperNode.appendChild(hint);
+                lastLowerNode = document.createElement("p");
+                lastLowerNode.innerHTML = "-+-+-+-+-+-+-+-+-+-+-";
+                node.parentNode.insertBefore(lastUpperNode, node);
+                node.parentNode.appendChild(lastLowerNode, node);
+            })
 
     node.addEventListener("blur",
-        function () {
-            node.parentNode.removeChild(lastUpperNode);
-            node.parentNode.removeChild(lastLowerNode);
-        })
+            function () {
+                node.parentNode.removeChild(lastUpperNode);
+                node.parentNode.removeChild(lastLowerNode);
+            })
 }
 
 function chooseHintText(id) {
@@ -55,13 +55,13 @@ function chooseHintText(id) {
 function addFormListener() {
     let form = document.getElementsByTagName('form').item(0);
     form.addEventListener('submit',
-        function () {
-            return confirm("Na pewno chcesz przesłać formularz?");
-        })
+            function () {
+                return confirm("Na pewno chcesz przesłać formularz?");
+            })
     form.addEventListener('reset',
-        function () {
-            return confirm("Na pewno chcesz wyczyścić formularz?");
-        })
+            function () {
+                return confirm("Na pewno chcesz wyczyścić formularz?");
+            })
 }
 
 window.onload = function () {

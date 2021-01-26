@@ -1,19 +1,18 @@
 <ui:composition template="/WEB-INF/template.xhtml"
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-    
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
     <ui:define name="title">Koszyk</ui:define>
-    
+
     <ui:define name="header">
         <header>
             <h1>Koszyk</h1>
         </header>
-
     </ui:define>
-    
+
     <ui:define name="content">
         <div class="whole_blob">
             <c:if test="#{not empty cartBean and cartBean.cartProducts.size() ne 0}">
@@ -25,8 +24,6 @@
                         <div class="cart_product">
                             <h:outputText value="#{product.name} cena: #{product.price}" />
                         </div>
-
-
                     </c:forEach>
                     <div class="cart_product">
                         <h:outputLabel>Ilość produktów w koszyku: #{cartBean.cartProducts.size()}</h:outputLabel>
@@ -35,8 +32,6 @@
                         <h:outputLabel>Cena za produkty: #{cartBean.getPrice()}</h:outputLabel>
                     </div>
                 </div>
-
-
                 <div class="order_details">
                     <h:form>
                         <strong>Dostawa:</strong>
@@ -55,7 +50,6 @@
                     </h:form>
                     <h:outputLabel>Cena calkowita: #{orderBean.getActualPrice()}</h:outputLabel>
                 </div>
-
             </c:if>
             <c:if test="#{orderBean.isEverythingSet()}">
                 <h4><h:link value="Złóż zamówienie" outcome="order_summary"/></h4>
@@ -66,12 +60,11 @@
             <h4><h:link value="Wróć do przeglądania produktów" outcome="product_list"/></h4>
         </div>
     </ui:define>
-    
-    <ui:define name="footer">
 
+    <ui:define name="footer">
         <footer>
             <h4><h:link value="Powrót na stronę główną" outcome="index"/></h4>
         </footer>
     </ui:define>
-    
+
 </ui:composition>

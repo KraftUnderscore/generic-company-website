@@ -1,177 +1,170 @@
 <ui:composition template="/WEB-INF/template.xhtml"
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
     <ui:define name="title">Filantropia</ui:define>
-    
+
     <ui:define name="header">
-    <header>
-        <h1>Filantropia</h1>
-    </header>
+        <header>
+            <h1>Filantropia</h1>
+        </header>
     </ui:define>
 
-    
     <ui:define name="nav-menu">
-    <nav class="navbar">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a href="#ecology">Ekologia</a></li>
-            <li class="nav-item"><a href="#africa">Afryka</a></li>
-            <li class="nav-item"><a href="#others">Inne</a></li>
-            <li class="nav-item"><h:link value="Powrót" outcome="index"/></li>
-        </ul>
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="#ecology">Ekologia</a></li>
+                <li class="nav-item"><a href="#africa">Afryka</a></li>
+                <li class="nav-item"><a href="#others">Inne</a></li>
+                <li class="nav-item"><h:link value="Powrót" outcome="index"/></li>
+            </ul>
 
-    </nav>
+        </nav>
     </ui:define>
 
     <ui:define name="content">
-
-    <ol>
-        <li>
-            <section id="ecology">
-                <h4>Ekologia</h4>
-
-                <ul>
-                    <li>
-                        <strong>Ślad węglowy firmy.</strong>
-                        <table border="1">
-                            <thead>
-                                <tr>
-                                    <th>Rok</th>
-                                    <th>Ślad węglowy</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        2019
-                                    </td>
-                                    <td>
-                                        2.8
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        2018
-                                    </td>
-                                    <td>
-                                        9.0
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        2017
-                                    </td>
-                                    <td>
-                                        11.9
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        2016
-                                    </td>
-                                    <td>
-                                        13.1
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p>
-                            <a href="static/resources/carbon_footprint.csv" download="crbnFtprnt.csv">Pobierz tabele</a>
-                        </p>
-                        <p>
-                            Nasz obecny ślad węglowy:
-                        </p>
-                        <p>
-                            0 t <meter min="0" max="15" value="2"></meter> 15 t
-                        </p>
-                    </li>
-                    <li>
-                        30 mil pln dla <a href="https://oceanconservancy.org/"><em>Ocean Conservancy</em></a> w 2019
-                        roku.
-                    </li>
-                </ul>
-            </section>
-        </li>
-        <li>
-            <section id="africa">
-                <h4>Afryka</h4>
-
-                <ul>
-                    <li>
-                        2 mil pln dla <em>Against Malaria Foundation</em> w 2019 roku.
-                    </li>
-                    <li>
-                        3 mil pln dla <em>Schistosomiasis Control Initiative</em> w 2019 roku.
-                    </li>
-                </ul>
-            </section>
-        </li>
-        <li>
-            <section id="others">
-                <h4>Inne</h4>
-
-                <ul>
-                    <li>Ratujemy delfiny :)</li>
-                    <li>Napisaliśmy raz na Twitterze BLM.</li>
-                    <li>
-                        Wydatki na filantropię.
-                        <table border="1">
-                            <thead>
-                                <tr>
-                                    <th rowspan="2"></th>
-                                    <th colspan="4">
-                                        Wydatki na filantropię w latach 2016-2019
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        2016
-                                    </th>
-                                    <th>
-                                        2017
-                                    </th>
-                                    <th>
-                                        2018
-                                    </th>
-                                    <th>
-                                        2019
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>Biznes Company Co.</th>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>35</td>
-                                </tr>
-                                <tr>
-                                    <th>Konkurencja</th>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </li>
-                </ul>
-                <aside>Dane są estymowane. Dane mogą nie reprezentować rzeczywistych wydatków <em>Konkurencji Co.</em>.
-                </aside>
-            </section>
-        </li>
-    </ol>
-
+        <ol>
+            <li>
+                <section id="ecology">
+                    <h4>Ekologia</h4>
+                    <ul>
+                        <li>
+                            <strong>Ślad węglowy firmy.</strong>
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>Rok</th>
+                                        <th>Ślad węglowy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            2019
+                                        </td>
+                                        <td>
+                                            2.8
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            2018
+                                        </td>
+                                        <td>
+                                            9.0
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            2017
+                                        </td>
+                                        <td>
+                                            11.9
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            2016
+                                        </td>
+                                        <td>
+                                            13.1
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>
+                                <a href="static/resources/carbon_footprint.csv" download="crbnFtprnt.csv">Pobierz tabele</a>
+                            </p>
+                            <p>
+                                Nasz obecny ślad węglowy:
+                            </p>
+                            <p>
+                                0 t <meter min="0" max="15" value="2"></meter> 15 t
+                            </p>
+                        </li>
+                        <li>
+                            30 mil pln dla <a href="https://oceanconservancy.org/"><em>Ocean Conservancy</em></a> w 2019
+                            roku.
+                        </li>
+                    </ul>
+                </section>
+            </li>
+            <li>
+                <section id="africa">
+                    <h4>Afryka</h4>
+                    <ul>
+                        <li>
+                            2 mil pln dla <em>Against Malaria Foundation</em> w 2019 roku.
+                        </li>
+                        <li>
+                            3 mil pln dla <em>Schistosomiasis Control Initiative</em> w 2019 roku.
+                        </li>
+                    </ul>
+                </section>
+            </li>
+            <li>
+                <section id="others">
+                    <h4>Inne</h4>
+                    <ul>
+                        <li>Ratujemy delfiny :)</li>
+                        <li>Napisaliśmy raz na Twitterze BLM.</li>
+                        <li>
+                            Wydatki na filantropię.
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2"></th>
+                                        <th colspan="4">
+                                            Wydatki na filantropię w latach 2016-2019
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            2016
+                                        </th>
+                                        <th>
+                                            2017
+                                        </th>
+                                        <th>
+                                            2018
+                                        </th>
+                                        <th>
+                                            2019
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Biznes Company Co.</th>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>35</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Konkurencja</th>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                    </ul>
+                    <aside>Dane są estymowane. Dane mogą nie reprezentować rzeczywistych wydatków <em>Konkurencji Co.</em>.
+                    </aside>
+                </section>
+            </li>
+        </ol>
     </ui:define>
-    
+
     <ui:define name="footer">
-        
-    <footer>
-        <h4><h:link value="Powrót na stronę główną" outcome="index"/></h4>
-    </footer>
+        <footer>
+            <h4><h:link value="Powrót na stronę główną" outcome="index"/></h4>
+        </footer>
     </ui:define>
-    
+
 </ui:composition>
